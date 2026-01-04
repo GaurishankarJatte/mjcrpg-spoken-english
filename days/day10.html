@@ -1,190 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 10 – English Q&A & Vocabulary</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f2f2f2;
-        }
-        
-        header {
-            background: #4CAF50;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 1.8em;
-            font-weight: bold;
-        }
-        
-        section {
-            margin: 20px;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        h2 {
-            color: #333;
-        }
-        
-        ol {
-            margin-left: 20px;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-        
-        th,
-        td {
-            border: 1px solid #ccc;
-            padding: 8px;
-            text-align: left;
-        }
-        
-        th {
-            background: #4CAF50;
-            color: white;
-        }
-        
-        button {
-            background: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin-top: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        
-        button:hover {
-            background: #45a049;
-        }
-        
-        #vocabTable {
-            display: none;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 10 – Negative Sentences | MJCRPG</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Segoe UI',Arial,sans-serif;
+  background:#020617;
+  color:#e5e7eb;
+  line-height:1.8;
+}
+
+/* HERO HEADER */
+.hero{
+  background:radial-gradient(circle at top left,#38bdf8,#2563eb 40%,#020617 80%);
+  padding:70px 20px;
+  text-align:center;
+  position:relative;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  bottom:-70px;
+  left:0;
+  width:100%;
+  height:140px;
+  background:#020617;
+  transform:skewY(-4deg);
+}
+.hero-content{position:relative;z-index:2}
+.hero h1{margin:0;font-size:46px}
+.hero p{font-size:18px;opacity:.9}
+.hero span{
+  display:inline-block;
+  margin-top:10px;
+  background:rgba(255,255,255,.15);
+  padding:6px 18px;
+  border-radius:999px;
+  font-size:14px;
+}
+
+/* LAYOUT */
+.container{
+  max-width:950px;
+  margin:auto;
+  padding:60px 20px 40px;
+}
+
+/* CARDS */
+.card{
+  background:#020617;
+  border-radius:20px;
+  padding:28px;
+  margin-bottom:30px;
+  box-shadow:0 20px 45px rgba(0,0,0,.45);
+  transition:.4s;
+}
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 30px 60px rgba(56,189,248,.35);
+}
+
+h2{
+  color:#38bdf8;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:0;
+}
+
+.example{
+  background:#1e293b;
+  padding:15px;
+  border-radius:14px;
+  margin-top:12px;
+}
+
+.highlight{
+  background:#1e293b;
+  padding:12px;
+  border-radius:12px;
+  border-left:4px solid #38bdf8;
+  margin-top:10px;
+}
+
+.practice{
+  background:#042f2e;
+  border-left:6px solid #14b8a6;
+}
+
+/* BUTTONS */
+.action-buttons{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+  margin:40px 0;
+}
+
+.btn{
+  padding:14px 28px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:600;
+  font-size:15px;
+  transition:.3s;
+}
+
+.btn.primary{
+  background:linear-gradient(135deg,#22c55e,#16a34a);
+  color:#022c22;
+}
+
+.btn.secondary{
+  background:#1e293b;
+  color:#e5e7eb;
+}
+
+.btn.about-btn{
+  background:linear-gradient(135deg,#facc15,#eab308);
+  color:#422006;
+}
+
+.btn.next{
+  background:linear-gradient(135deg,#38bdf8,#2563eb);
+  color:white;
+}
+
+.btn:hover{
+  transform:translateY(-4px) scale(1.05);
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:25px;
+  background:#020617;
+  color:#94a3b8;
+}
+</style>
 </head>
 
 <body>
 
-    <header>Day 10 – English Q&A & Vocabulary</header>
+<!-- HEADER -->
+<header class="hero">
+  <div class="hero-content">
+    <h1>MJCRPG</h1>
+    <p>30-Day Spoken English Course</p>
+    <span>Speak Clearly • Avoid Mistakes</span>
+  </div>
+</header>
 
-    <section>
-        <h2>Questions & Answers</h2>
-        <ol>
-            <li><strong>Q:</strong> What is the difference between "who" and "whom"?<br>
-                <strong>A:</strong> "Who" = subject, "Whom" = object. Example: Who called you? To whom did you speak?</li>
-            <li><strong>Q:</strong> What is a compound-complex sentence?<br>
-                <strong>A:</strong> A sentence with 2+ independent clauses and 1+ dependent clause. Example: I went home because it rained, and I took an umbrella.</li>
-            <li><strong>Q:</strong> Difference between "say" and "tell"?<br>
-                <strong>A:</strong> "Say" = speak words, "Tell" = give information. Example: He said hello. He told me a story.</li>
-            <li><strong>Q:</strong> What is a modal verb?<br>
-                <strong>A:</strong> A verb that expresses ability, possibility, permission, or obligation. Example: can, may, must.</li>
-            <li><strong>Q:</strong> Difference between "some" and "any"?<br>
-                <strong>A:</strong> Some = affirmative sentences, Any = negative/questions. Example: I have some apples. Do you have any apples?</li>
-            <li><strong>Q:</strong> What is the difference between "few" and "little"?<br>
-                <strong>A:</strong> Few = countable nouns, Little = uncountable nouns. Example: Few books, little water.</li>
-            <li><strong>Q:</strong> What is reported speech?<br>
-                <strong>A:</strong> Reporting what someone said. Example: Direct: He said, "I am happy." Reported: He said that he was happy.</li>
-            <li><strong>Q:</strong> Difference between "since" and "for"?<br>
-                <strong>A:</strong> Since = starting point, For = duration. Example: I have lived here since 2010. I have lived here for 10 years.</li>
-            <li><strong>Q:</strong> How to use "used to"?<br>
-                <strong>A:</strong> To describe past habits or states. Example: I used to play football as a child.</li>
-            <li><strong>Q:</strong> Give an example of a phrasal verb.<br>
-                <strong>A:</strong> "Give up" = stop trying. Example: He decided to give up smoking.</li>
-        </ol>
-    </section>
+<div class="container">
 
-    <section>
-        <h2>Vocabulary – Day 10</h2>
-        <button onclick="toggleVocab()">Show / Hide Vocabulary</button>
-        <table id="vocabTable">
-            <tr>
-                <th>Word</th>
-                <th>English Meaning</th>
-                <th>Marathi Meaning</th>
-                <th>Example Sentence</th>
-            </tr>
-            <tr>
-                <td>1. Achieve</td>
-                <td>To successfully complete something</td>
-                <td>साध्य करणे</td>
-                <td>She worked hard to achieve her goals.</td>
-            </tr>
-            <tr>
-                <td>2. Brave</td>
-                <td>Ready to face danger</td>
-                <td>धाडसी</td>
-                <td>He was brave in the storm.</td>
-            </tr>
-            <tr>
-                <td>3. Calm</td>
-                <td>Peaceful, relaxed</td>
-                <td>शांत</td>
-                <td>He remained calm during the test.</td>
-            </tr>
-            <tr>
-                <td>4. Decisive</td>
-                <td>Ability to make quick decisions</td>
-                <td>निर्णायक</td>
-                <td>A decisive leader acts fast.</td>
-            </tr>
-            <tr>
-                <td>5. Efficient</td>
-                <td>Performing effectively</td>
-                <td>कार्यक्षम</td>
-                <td>She is efficient in completing tasks.</td>
-            </tr>
-            <tr>
-                <td>6. Friendly</td>
-                <td>Kind and pleasant</td>
-                <td>मैत्रीपूर्ण</td>
-                <td>He is friendly to everyone.</td>
-            </tr>
-            <tr>
-                <td>7. Generous</td>
-                <td>Willing to give</td>
-                <td>उदार</td>
-                <td>She is generous with her time.</td>
-            </tr>
-            <tr>
-                <td>8. Honest</td>
-                <td>Truthful and sincere</td>
-                <td>प्रामाणिक</td>
-                <td>He is honest and trustworthy.</td>
-            </tr>
-            <tr>
-                <td>9. Intelligent</td>
-                <td>Quick to understand or learn</td>
-                <td>बुद्धिमान</td>
-                <td>She is intelligent and solves problems fast.</td>
-            </tr>
-            <tr>
-                <td>10. Joyful</td>
-                <td>Feeling or showing happiness</td>
-                <td>आनंदी</td>
-                <td>The children were joyful during the festival.</td>
-            </tr>
-        </table>
-    </section>
+<!-- INTRO -->
+<div class="card">
+  <h2>📅 Day 10: Negative Sentences</h2>
+  <p><b>Goal:</b> Speak correct negative sentences confidently in daily conversations.</p>
+</div>
 
-    <script>
-        function toggleVocab() {
-            const table = document.getElementById('vocabTable');
-            table.style.display = table.style.display === 'none' ? 'table' : 'none';
-        }
-    </script>
+<!-- WHAT IS NEGATIVE -->
+<div class="card">
+  <h2>❌ What is a Negative Sentence?</h2>
+  <p>A negative sentence tells us that something is <b>not true</b> or <b>does not happen</b>.</p>
+  <div class="highlight">
+    👉 We usually use <b>not</b>, <b>don’t</b>, <b>doesn’t</b>, <b>didn’t</b>.
+  </div>
+</div>
+
+<!-- PRESENT TENSE -->
+<div class="card">
+  <h2>🕒 Present Tense (Negative)</h2>
+  <p><b>Subject + do/does not + verb</b></p>
+  <div class="example">
+    I do not like coffee.<br>
+    You don’t speak loudly.<br>
+    He does not play cricket.<br>
+    She doesn’t work on Sunday.
+  </div>
+</div>
+
+<!-- PAST TENSE -->
+<div class="card">
+  <h2>🕰️ Past Tense (Negative)</h2>
+  <p><b>Subject + did not + verb</b></p>
+  <div class="example">
+    I did not go yesterday.<br>
+    We didn’t understand the lesson.<br>
+    He did not call me.
+  </div>
+</div>
+
+<!-- FUTURE TENSE -->
+<div class="card">
+  <h2>🔮 Future Tense (Negative)</h2>
+  <p><b>Subject + will not + verb</b></p>
+  <div class="example">
+    I will not give up.<br>
+    She won’t be late.<br>
+    They will not forget practice.
+  </div>
+</div>
+
+<!-- PRACTICE -->
+<div class="card practice">
+  <h2>✍️ Speaking Practice</h2>
+  <ul>
+    <li>I do not feel afraid.</li>
+    <li>I did not practice yesterday.</li>
+    <li>I will not stop learning English.</li>
+  </ul>
+  <p>🎯 Speak for <b>4 minutes</b> using only negative sentences.</p>
+</div>
+
+<!-- BUTTONS -->
+<div class="action-buttons">
+  <a href="https://whatsapp.com/channel/0029VbCE4X1HQbSDQDRtCs1B"
+     class="btn primary" target="_blank">
+     📢 Join WhatsApp Channel
+  </a>
+
+  <a href="../index.html#about" class="btn about-btn">
+     👤 About Founder
+  </a>
+
+  <a href="day11.html" class="btn next">
+     👉 Day 11
+  </a>
+</div>
+
+</div>
+
+<footer>
+  © 2025 MJCRPG • Speak Correctly Every Day
+</footer>
 
 </body>
-
 </html>
