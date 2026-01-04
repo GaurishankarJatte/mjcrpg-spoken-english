@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 8 – 100+ Vocabulary | MJCRPG</title>
+
+    <style>
+        * {
+            box-sizing: border-box
+        }
+        
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #020617;
+            color: #e5e7eb;
+        }
+        /* HEADER */
+        
+        .hero {
+            background: radial-gradient(circle at top left, #38bdf8, #2563eb 40%, #020617 80%);
+            padding: 70px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            margin: 0;
+            font-size: 46px
+        }
+        
+        .hero p {
+            opacity: .9
+        }
+        /* LAYOUT */
+        
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+        /* GRID */
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        /* VOCAB BOX */
+        
+        .word-box {
+            background: #020617;
+            border-radius: 18px;
+            padding: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, .45);
+            transition: .3s;
+        }
+        
+        .word-box:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 55px rgba(56, 189, 248, .35);
+        }
+        
+        .word {
+            font-size: 22px;
+            color: #38bdf8;
+            font-weight: 700;
+        }
+        
+        .meaning {
+            font-size: 15px;
+            color: #cbd5f5;
+            margin: 8px 0;
+        }
+        
+        .example {
+            font-size: 14px;
+            color: #e5e7eb;
+            background: #1e293b;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        /* BUTTONS */
+        
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 60px 0;
+        }
+        
+        .btn {
+            padding: 14px 28px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: .3s;
+        }
+        
+        .btn.primary {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: #022c22;
+        }
+        
+        .btn.about-btn {
+            background: linear-gradient(135deg, #facc15, #eab308);
+            color: #422006;
+        }
+        
+        .btn.next {
+            background: linear-gradient(135deg, #38bdf8, #2563eb);
+            color: white;
+        }
+        
+        .btn:hover {
+            transform: translateY(-4px) scale(1.05)
+        }
+        
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #020617;
+            color: #94a3b8;
+        }
+    </style>
+
+    <script>
+        const searchInput = document.getElementById("searchInput");
+        const words = document.querySelectorAll(".word-box");
+
+        searchInput.addEventListener("keyup", function() {
+            const value = this.value.toLowerCase();
+            words.forEach(box => {
+                box.style.display = box.innerText.toLowerCase().includes(value) ?
+                    "block" : "none";
+            });
+        });
+    </script>
+
+</head>
+
+
+<body>
+
+    <header class="hero">
+        <h1>MJCRPG</h1>
+        <p>Day 8 – 100+ Daily Vocabulary (Spoken English)</p>
+    </header>
+
+    <div class="container">
+
+        <h2 style="text-align:center;color:#38bdf8">📘 Common Daily Vocabulary</h2>
+        <input type="text" id="searchInput" placeholder="🔍 Search vocabulary..." style="
+         width:100%;
+         padding:14px 20px;
+         border-radius:999px;
+         border:none;
+         font-size:16px;
+         margin-bottom:30px;
+         outline:none;
+       ">
+
+        <div class="grid">
+
+            <!-- SAMPLE 20 WORDS (You can extend same pattern to 100+) -->
+            <div class="word-box">
+                <div class="word">Word</div>
+                <div class="meaning">Marathi Meaning</div>
+                <div class="example">Example sentence.</div>
+            </div>
+
+            <div class="word-box">
+                <div class="word">Improve</div>
+                <div class="meaning">सुधार करणे</div>
+                <div class="example">I want to improve my English.</div>
+            </div>
+
+            <div class="word-box">
+                <div class="word">Decide</div>
+                <div class="meaning">निर्णय घेणे</div>
+                <div class="example">I decided to learn English.</div>
+            </div>
+
+            <div class="word-box">
+                <div class="word">Practice</div>
+                <div class="meaning">सराव करणे</div>
+                <div class="example">Practice English every day.</div>
+            </div>
+
+            <div class="word-box">
+                <div class="word">Confidence</div>
+                <div class="meaning">आत्मविश्वास</div>
+                <div class="example">English gives me confidence.</div>
+            </div>
+
+            <div class="word-box">
+                <div class="word">Fear</div>
+                <div class="meaning">भीती</div>
+                <div class="example">I have no fear now.</div>
+            </div>
+
+            <div class="word-box">
+                <div class="word">Simple</div>
+                <div class="meaning">सोपे</div>
+                <div class="example">Keep your English simple.</div>
+            </div>
+
+            <div class="word-box">
+                <div class="word">Daily</div>
+                <div class="meaning">दररोज</div>
+                <div class="example">I speak English daily.</div>
+            </div>
+
+            <div class="word-box">
+                <div class="word">Explain</div>
+                <div class="meaning">समजावणे</div>
+                <div class="example">Please explain again.</div>
+            </div>
+
+            <div class="word-box">
+                <div class="word">Understand</div>
+                <div class="meaning">समजणे</div>
+                <div class="example">I understand English now.</div>
+            </div>
+
+            <div class="word-box">
+                <div class="word">Correct</div>
+                <div class="meaning">बरोबर</div>
+                <div class="example">Your sentence is correct.</div>
+            </div>
+
+            <div class="word-box">
+                <div class="word">Accept</div>
+                <div class="meaning">स्वीकार करणे</div>
+                <div class="example">I accept my mistakes.</div>
+            </div>
+            <div class="word-box">
+                <div class="word">Achieve</div>
+                <div class="meaning">साध्य करणे</div>
+                <div class="example">I will achieve my goals.</div>
+            </div>
+            <div class="word-box">
+                <div class="word">Advice</div>
+                <div class="meaning">सल्ला</div>
+                <div class="example">He gave me good advice.</div>
+            </div>
+            <div class="word-box">
+                <div class="word">Afraid</div>
+                <div class="meaning">घाबरलेला</div>
+                <div class="example">I am not afraid now.</div>
+            </div>
+            <div class="word-box">
+                <div class="word">Allow</div>
+                <div class="meaning">परवानगी देणे</div>
+                <div class="example">Please allow me.</div>
+            </div>
+            <div class="word-box">
+                <div class="word">Answer</div>
+                <div class="meaning">उत्तर</div>
+                <div class="example">Give the correct answer.</div>
+            </div>
+            <div class="word-box">
+                <div class="word">Believe</div>
+                <div class="meaning">विश्वास ठेवणे</div>
+                <div class="example">Believe in yourself.</div>
+            </div>
+            <div class="word-box">
+                <div class="word">Busy</div>
+                <div class="meaning">व्यस्त</div>
+                <div class="example">I am busy today.</div>
+            </div>
+            <div class="word-box">
+                <div class="word">Careful</div>
+                <div class="meaning">काळजीपूर्वक</div>
+                <div class="example">Be careful while speaking.</div>
+            </div>
+            <div class="word-box">
+                <div class="word">Change</div>
+                <div class="meaning">बदल</div>
+                <div class="example">Change your mindset.</div>
+            </div>
+
+            <div class="word-box">
+                <div class="word">Choose</div>
+                <div class="meaning">निवडणे</div>
+                <div class="example">Choose the right path.</div>
+            </div>
+            <div class="word-box">
+                <div class="word">Comfort</div>
+                <div class="meaning">सुख</div>
+                <div class="example">English gives me comfort.</div>
+            </div>
+            <div class="word-box">
+                <div class="word">Complete</div>
+                <div class="meaning">पूर्ण करणे</div>
+                <div class="example">Complete your work.</div>
+            </div>
+            <div class="word-box">
+                <div class="word">Confuse</div>
+                <div class="meaning">गोंधळात टाकणे</div>
+                <div class="example">Don’t confuse me.</div>
+            </div>
+            <div class="word-box">
+                <div class="word">Control</div>
+                <div class="meaning">नियंत्रण</div>
+                <div class="example">Control your fear.</div>
+            </div>
+            <div class="word-box">
+                <div class="word">Correct</div>
+                <div class="meaning">बरोबर</div>
+                <div class="example">Your answer is correct.</div>
+            </div>
+            <div class="word-box">
+                <div class="word">Create</div>
+                <div class="meaning">तयार करणे</div>
+                <div class="example">Create good habits.</div>
+            </div>
+            <div class="word-box">
+                <div class="word">Decide</div>
+                <div class="meaning">निर्णय घेणे</div>
+                <div class="example">Decide your future.</div>
+            </div>
+            <div class="word-box">
+                <div class="word">Depend</div>
+                <div class="meaning">अवलंबून असणे</div>
+                <div class="example">I depend on practice.</div>
+            </div>
+            <div class="word-box">
+                <div class="word">Develop</div>
+                <div class="meaning">विकसित करणे</div>
+                <div class="example">Develop speaking skills.</div>
+            </div>
+
+            <div class="word-box">
+                <div class="word">Effort</div>
+                <div class="meaning">प्रयत्न</div>
+                <div class="example">Make daily effort.</div>
+            </div>
+            <div class="word-box">
+                <div class="word">Enjoy</div>
+                <div class="meaning">आनंद घेणे</div>
+                <div class="example">Enjoy learning English.</div>
+            </div>
+            <div class="word-box">
+                <div class="word">Explain</div>
+                <div class="meaning">समजावणे</div>
+                <div class="example">Explain clearly.</div>
+            </div>
+            <div class="word-box">
+                <div class="word">Fail</div>
+                <div class="meaning">अपयशी होणे</div>
+                <div class="example">Don’t fear failure.</div>
+            </div>
+            <div class="word-box">
+                <div class="word">Focus</div>
+                <div class="meaning">लक्ष केंद्रित करणे</div>
+                <div class="example">Focus on speaking.</div>
+            </div>
+            <div class="word-box">
+                <div class="word">Forget</div>
+                <div class="meaning">विसरणे</div>
+                <div class="example">Don’t forget practice.</div>
+            </div>
+            <div class="word-box">
+                <div class="word">Improve</div>
+                <div class="meaning">सुधार करणे</div>
+                <div class="example">Improve daily.</div>
+            </div>
+            <div class="word-box">
+                <div class="word">Important</div>
+                <div class="meaning">महत्त्वाचे</div>
+                <div class="example">English is important.</div>
+            </div>
+            <div class="word-box">
+                <div class="word">Learn</div>
+                <div class="meaning">शिकणे</div>
+                <div class="example">Learn something new.</div>
+            </div>
+            <div class="word-box">
+                <div class="word">Mistake</div>
+                <div class="meaning">चूक</div>
+                <div class="example">Mistakes help learning.</div>
+            </div>
+
+            <!-- (Continue same style up to 100 – structure stays identical) -->
+
+
+            <!-- 👉 COPY THIS BLOCK TO ADD UP TO 100+ WORDS -->
+
+        </div>
+
+        <!-- BUTTONS -->
+        <div class="action-buttons">
+            <a href="https://whatsapp.com/channel/0029VbCE4X1HQbSDQDRtCs1B" class="btn primary" target="_blank">
+     📢 Join WhatsApp Channel
+  </a>
+
+            <a href="../index.html#about" class="btn about-btn">
+     👤 About Founder
+  </a>
+
+            <a href="day9.html" class="btn next">
+     👉 Day 9
+  </a>
+        </div>
+
+    </div>
+
+    <footer>
+        © 2025 MJCRPG • Vocabulary Builds Confidence
+    </footer>
+
+</body>
+
+</html>
