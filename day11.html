@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 11 – Articles (A, An, The) | MJCRPG</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background: #eef2f7;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(90deg, #4CAF50, #2E7D32);
+            color: white;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 2em;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        header span {
+            display: block;
+            font-size: 0.6em;
+            font-weight: 400;
+            margin-top: 5px;
+            color: #c8f0c8;
+        }
+        
+        .section-card {
+            background: white;
+            margin: 20px auto;
+            padding: 25px;
+            border-radius: 15px;
+            max-width: 900px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            color: #2E7D32;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        ol {
+            margin-left: 20px;
+            line-height: 1.6;
+        }
+        
+        ol li {
+            margin-bottom: 15px;
+        }
+        
+        button {
+            background: #2E7D32;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            margin-top: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #1B5E20;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background: #4CAF50;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background: #f3f7f8;
+        }
+        
+        tr:hover {
+            background: #dcedc8;
+        }
+        
+        #vocabTable {
+            display: none;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        MJCRPG – English Learning
+        <span>Day 11 – Articles (A, An, The)</span>
+    </header>
+
+    <div class="section-card">
+        <h2>Articles – Rules & Examples</h2>
+        <ol>
+            <li><strong>A</strong>: Used before singular nouns starting with a consonant sound.
+                <em>Example:</em> I saw a cat in the garden.</li>
+            <li><strong>An</strong>: Used before singular nouns starting with a vowel sound (a, e, i, o, u).
+                <em>Example:</em> She ate an apple for breakfast.</li>
+            <li><strong>The</strong>: Used for specific nouns or nouns already mentioned.
+                <em>Example:</em> The book on the table is mine.</li>
+            <li>Use <strong>a</strong> when introducing something for the first time.
+                <em>Example:</em> I bought a pen yesterday.</li>
+            <li>Use <strong>the</strong> when the listener knows what you are talking about.
+                <em>Example:</em> The pen I bought yesterday is blue.</li>
+            <li><strong>An</strong> is used before silent consonants like 'hour'.
+                <em>Example:</em> He arrived an hour ago.</li>
+            <li>Do not use an article before uncountable nouns when speaking generally.
+                <em>Example:</em> I like water. (Not: I like the water)</li>
+            <li>Use <strong>the</strong> for oceans, rivers, mountains, and unique places.
+                <em>Example:</em> The Himalayas are beautiful.</li>
+            <li>Use <strong>a/an</strong> for jobs or professions.
+                <em>Example:</em> She is a teacher. He is an engineer.</li>
+            <li>Use <strong>the</strong> before superlatives.
+                <em>Example:</em> He is the best player in the team.</li>
+        </ol>
+    </div>
+
+    <div class="section-card">
+        <h2>Vocabulary – Day 11</h2>
+        <button onclick="toggleVocab()">Show / Hide Vocabulary</button>
+        <table id="vocabTable">
+            <tr>
+                <th>Word</th>
+                <th>English Meaning</th>
+                <th>Marathi Meaning</th>
+                <th>Example Sentence</th>
+            </tr>
+            <tr>
+                <td>1. Accurate</td>
+                <td>Correct and precise</td>
+                <td>अचूक</td>
+                <td>Her answer was accurate and clear.</td>
+            </tr>
+            <tr>
+                <td>2. Brave</td>
+                <td>Ready to face danger</td>
+                <td>धाडसी</td>
+                <td>He was brave during the fire rescue.</td>
+            </tr>
+            <tr>
+                <td>3. Curious</td>
+                <td>Eager to know or learn</td>
+                <td>कुतूहल</td>
+                <td>The child was curious about the stars.</td>
+            </tr>
+            <tr>
+                <td>4. Delight</td>
+                <td>Great pleasure</td>
+                <td>आनंद</td>
+                <td>She felt delight on receiving the gift.</td>
+            </tr>
+            <tr>
+                <td>5. Essential</td>
+                <td>Absolutely necessary</td>
+                <td>अत्यावश्यक</td>
+                <td>Water is essential for life.</td>
+            </tr>
+            <tr>
+                <td>6. Flexible</td>
+                <td>Adaptable, easy to change</td>
+                <td>लवचिक</td>
+                <td>Flexible schedules help balance work and study.</td>
+            </tr>
+            <tr>
+                <td>7. Genuine</td>
+                <td>Real, sincere</td>
+                <td>खरा, प्रामाणिक</td>
+                <td>He showed genuine interest in my work.</td>
+            </tr>
+            <tr>
+                <td>8. Hesitate</td>
+                <td>Pause before acting</td>
+                <td>कचरत राहणे</td>
+                <td>Don't hesitate to ask questions.</td>
+            </tr>
+            <tr>
+                <td>9. Inspire</td>
+                <td>Fill with motivation</td>
+                <td>प्रेरित करणे</td>
+                <td>The speech inspired the students to work hard.</td>
+            </tr>
+            <tr>
+                <td>10. Joyful</td>
+                <td>Feeling happiness</td>
+                <td>आनंदी</td>
+                <td>The children were joyful playing in the park.</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function toggleVocab() {
+            const table = document.getElementById('vocabTable');
+            table.style.display = table.style.display === 'none' ? 'table' : 'none';
+        }
+    </script>
+
+</body>
+
+</html>
