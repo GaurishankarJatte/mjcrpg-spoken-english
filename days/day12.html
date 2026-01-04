@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 12 – Prepositions | MJCRPG</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background: #f0f4f8;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(90deg, #FF7043, #F4511E);
+            color: white;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 2em;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        header span {
+            display: block;
+            font-size: 0.6em;
+            font-weight: 400;
+            margin-top: 5px;
+            color: #ffd6c9;
+        }
+        
+        .section-card {
+            background: white;
+            margin: 20px auto;
+            padding: 25px;
+            border-radius: 15px;
+            max-width: 900px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            color: #F4511E;
+            margin-bottom: 20px;
+            font-size: 1.6em;
+            text-align: center;
+        }
+        
+        .preposition-card {
+            background: #fff3e0;
+            border-left: 5px solid #FF7043;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .preposition-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .preposition-card strong {
+            color: #BF360C;
+        }
+        
+        .preposition-card em {
+            display: block;
+            margin-top: 5px;
+            color: #6d4c41;
+        }
+        
+        .vocab-section {
+            text-align: center;
+        }
+        
+        button {
+            background: #F4511E;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            margin-top: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #BF360C;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background: #FF7043;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background: #fff3e0;
+        }
+        
+        tr:hover {
+            background: #ffe0b2;
+        }
+        
+        #vocabTable {
+            display: none;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        MJCRPG – English Learning
+        <span>Day 12 – Prepositions</span>
+    </header>
+
+    <div class="section-card">
+        <h2>Prepositions – Examples</h2>
+
+        <div class="preposition-card">
+            <strong>In</strong>: Used for enclosed spaces or time periods.
+            <em>Example:</em> I live in Mumbai. / I was born in 2005.
+        </div>
+        <div class="preposition-card">
+            <strong>On</strong>: Used for surfaces, days, or dates.
+            <em>Example:</em> The book is on the table. / I will meet you on Monday.
+        </div>
+        <div class="preposition-card">
+            <strong>At</strong>: Used for specific points, places, or times.
+            <em>Example:</em> Meet me at the bus stop. / The class starts at 9 AM.
+        </div>
+        <div class="preposition-card">
+            <strong>By</strong>: Indicates the agent or deadline.
+            <em>Example:</em> The book was written by him. / Submit the report by Friday.
+        </div>
+        <div class="preposition-card">
+            <strong>For</strong>: Shows purpose, duration, or recipient.
+            <em>Example:</em> This gift is for you. / I worked for 5 hours.
+        </div>
+        <div class="preposition-card">
+            <strong>With</strong>: Shows accompaniment or possession.
+            <em>Example:</em> I went to the park with my friend. / He came with a bag.
+        </div>
+        <div class="preposition-card">
+            <strong>About</strong>: Indicates a topic.
+            <em>Example:</em> We talked about the project.
+        </div>
+        <div class="preposition-card">
+            <strong>From</strong>: Shows origin or starting point.
+            <em>Example:</em> I am from Pune. / He walked from home to school.
+        </div>
+        <div class="preposition-card">
+            <strong>To</strong>: Indicates direction or recipient.
+            <em>Example:</em> I am going to the market. / I gave the book to her.
+        </div>
+        <div class="preposition-card">
+            <strong>Between</strong>: Used for two items or people.
+            <em>Example:</em> The shop is between the bank and the school.
+        </div>
+    </div>
+
+    <div class="section-card vocab-section">
+        <h2>Vocabulary – Day 12</h2>
+        <button onclick="toggleVocab()">Show / Hide Vocabulary</button>
+        <table id="vocabTable">
+            <tr>
+                <th>Word</th>
+                <th>English Meaning</th>
+                <th>Marathi Meaning</th>
+                <th>Example Sentence</th>
+            </tr>
+            <tr>
+                <td>1. Abundant</td>
+                <td>Existing in large quantities</td>
+                <td>प्रचुर</td>
+                <td>The farm has abundant crops this year.</td>
+            </tr>
+            <tr>
+                <td>2. Benevolent</td>
+                <td>Kind and charitable</td>
+                <td>सद्भावी</td>
+                <td>The benevolent man donated to the orphanage.</td>
+            </tr>
+            <tr>
+                <td>3. Cautious</td>
+                <td>Careful to avoid danger</td>
+                <td>सावध</td>
+                <td>Drivers must be cautious on slippery roads.</td>
+            </tr>
+            <tr>
+                <td>4. Diligent</td>
+                <td>Hardworking and focused</td>
+                <td>परिश्रमी</td>
+                <td>She is diligent in completing her assignments.</td>
+            </tr>
+            <tr>
+                <td>5. Eager</td>
+                <td>Very enthusiastic</td>
+                <td>उत्सुक</td>
+                <td>The students were eager to learn new words.</td>
+            </tr>
+            <tr>
+                <td>6. Fragrant</td>
+                <td>Having a pleasant smell</td>
+                <td>सुगंधी</td>
+                <td>The garden was full of fragrant flowers.</td>
+            </tr>
+            <tr>
+                <td>7. Gracious</td>
+                <td>Courteous and kind</td>
+                <td>दयाळू</td>
+                <td>She was gracious in accepting the award.</td>
+            </tr>
+            <tr>
+                <td>8. Humble</td>
+                <td>Modest, not arrogant</td>
+                <td>विनम्र</td>
+                <td>Despite his success, he remained humble.</td>
+            </tr>
+            <tr>
+                <td>9. Illuminate</td>
+                <td>To light up or clarify</td>
+                <td>प्रकाशीत करणे</td>
+                <td>The lamp will illuminate the room.</td>
+            </tr>
+            <tr>
+                <td>10. Jovial</td>
+                <td>Cheerful and friendly</td>
+                <td>आनंदी, हसतमुख</td>
+                <td>He was in a jovial mood at the party.</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function toggleVocab() {
+            const table = document.getElementById('vocabTable');
+            table.style.display = table.style.display === 'none' ? 'table' : 'none';
+        }
+    </script>
+
+</body>
+
+</html>
