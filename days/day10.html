@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Day 10 – Negative Sentences | MJCRPG</title>
+<title>Day 10 – Spoken English Practice | MJCRPG</title>
 
 <style>
 *{box-sizing:border-box}
@@ -12,134 +12,75 @@ body{
   font-family:'Segoe UI',Arial,sans-serif;
   background:#020617;
   color:#e5e7eb;
-  line-height:1.8;
+  line-height:1.7;
 }
 
-/* HERO HEADER */
-.hero{
-  background:radial-gradient(circle at top left,#38bdf8,#2563eb 40%,#020617 80%);
-  padding:70px 20px;
+/* HEADER */
+.header{
+  background:linear-gradient(135deg,#38bdf8,#2563eb);
+  padding:60px 20px;
   text-align:center;
-  position:relative;
 }
-.hero::after{
-  content:"";
-  position:absolute;
-  bottom:-70px;
-  left:0;
-  width:100%;
-  height:140px;
-  background:#020617;
-  transform:skewY(-4deg);
-}
-.hero-content{position:relative;z-index:2}
-.hero h1{margin:0;font-size:46px}
-.hero p{font-size:18px;opacity:.9}
-.hero span{
-  display:inline-block;
-  margin-top:10px;
-  background:rgba(255,255,255,.15);
-  padding:6px 18px;
-  border-radius:999px;
-  font-size:14px;
-}
+.header h1{margin:0;font-size:44px}
+.header p{font-size:18px;opacity:.95}
 
-/* LAYOUT */
+/* CONTAINER */
 .container{
-  max-width:950px;
+  max-width:900px;
   margin:auto;
-  padding:60px 20px 40px;
+  padding:40px 20px;
 }
 
 /* CARDS */
 .card{
   background:#020617;
   border-radius:20px;
-  padding:28px;
+  padding:25px;
   margin-bottom:30px;
-  box-shadow:0 20px 45px rgba(0,0,0,.45);
-  transition:.4s;
+  box-shadow:0 18px 40px rgba(0,0,0,.5);
 }
-.card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 30px 60px rgba(56,189,248,.35);
-}
+h2{color:#38bdf8;margin-top:0}
 
-h2{
-  color:#38bdf8;
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin-top:0;
-}
-
-.example{
+/* SPEAK BOX */
+.speak-box{
   background:#1e293b;
-  padding:15px;
+  padding:18px;
   border-radius:14px;
   margin-top:12px;
 }
 
-.highlight{
-  background:#1e293b;
-  padding:12px;
-  border-radius:12px;
-  border-left:4px solid #38bdf8;
-  margin-top:10px;
-}
-
+/* PRACTICE */
 .practice{
   background:#042f2e;
-  border-left:6px solid #14b8a6;
+  border-left:6px solid #22c55e;
+  padding:20px;
+  border-radius:18px;
 }
 
 /* BUTTONS */
-.action-buttons{
+.buttons{
   display:flex;
   justify-content:center;
   gap:20px;
   flex-wrap:wrap;
   margin:40px 0;
 }
-
 .btn{
-  padding:14px 28px;
+  padding:14px 26px;
   border-radius:999px;
   text-decoration:none;
   font-weight:600;
-  font-size:15px;
   transition:.3s;
 }
-
-.btn.primary{
-  background:linear-gradient(135deg,#22c55e,#16a34a);
-  color:#022c22;
-}
-
-.btn.secondary{
-  background:#1e293b;
-  color:#e5e7eb;
-}
-
-.btn.about-btn{
-  background:linear-gradient(135deg,#facc15,#eab308);
-  color:#422006;
-}
-
-.btn.next{
-  background:linear-gradient(135deg,#38bdf8,#2563eb);
-  color:white;
-}
-
-.btn:hover{
-  transform:translateY(-4px) scale(1.05);
-}
+.btn.whatsapp{background:#22c55e;color:#022c22}
+.btn.about{background:#facc15;color:#422006}
+.btn.next{background:#38bdf8;color:#020617}
+.btn:hover{transform:translateY(-4px) scale(1.05)}
 
 /* FOOTER */
 footer{
   text-align:center;
   padding:25px;
-  background:#020617;
   color:#94a3b8;
 }
 </style>
@@ -147,85 +88,63 @@ footer{
 
 <body>
 
-<!-- HEADER -->
-<header class="hero">
-  <div class="hero-content">
-    <h1>MJCRPG</h1>
-    <p>30-Day Spoken English Course</p>
-    <span>Speak Clearly • Avoid Mistakes</span>
-  </div>
-</header>
+<div class="header">
+  <h1>MJCRPG</h1>
+  <p>Day 10 – Spoken English Practice</p>
+</div>
 
 <div class="container">
 
-<!-- INTRO -->
 <div class="card">
-  <h2>📅 Day 10: Negative Sentences</h2>
-  <p><b>Goal:</b> Speak correct negative sentences confidently in daily conversations.</p>
+  <h2>🎯 Goal of Today</h2>
+  <p>Speak English confidently using simple daily sentences.</p>
 </div>
 
-<!-- WHAT IS NEGATIVE -->
 <div class="card">
-  <h2>❌ What is a Negative Sentence?</h2>
-  <p>A negative sentence tells us that something is <b>not true</b> or <b>does not happen</b>.</p>
-  <div class="highlight">
-    👉 We usually use <b>not</b>, <b>don’t</b>, <b>doesn’t</b>, <b>didn’t</b>.
+  <h2>🗣️ Repeat & Speak</h2>
+  <div class="speak-box">
+    I am learning English.<br>
+    I want to speak fluently.<br>
+    I practice English every day.<br>
+    I am not afraid of mistakes.
   </div>
 </div>
 
-<!-- PRESENT TENSE -->
 <div class="card">
-  <h2>🕒 Present Tense (Negative)</h2>
-  <p><b>Subject + do/does not + verb</b></p>
-  <div class="example">
-    I do not like coffee.<br>
-    You don’t speak loudly.<br>
-    He does not play cricket.<br>
-    She doesn’t work on Sunday.
+  <h2>🔄 Replace Words & Speak</h2>
+  <div class="speak-box">
+    I go to <b>school / office / college</b>.<br>
+    I like <b>tea / coffee / milk</b>.<br>
+    I am feeling <b>happy / tired / excited</b>.
   </div>
 </div>
 
-<!-- PAST TENSE -->
 <div class="card">
-  <h2>🕰️ Past Tense (Negative)</h2>
-  <p><b>Subject + did not + verb</b></p>
-  <div class="example">
-    I did not go yesterday.<br>
-    We didn’t understand the lesson.<br>
-    He did not call me.
-  </div>
-</div>
-
-<!-- FUTURE TENSE -->
-<div class="card">
-  <h2>🔮 Future Tense (Negative)</h2>
-  <p><b>Subject + will not + verb</b></p>
-  <div class="example">
-    I will not give up.<br>
-    She won’t be late.<br>
-    They will not forget practice.
-  </div>
-</div>
-
-<!-- PRACTICE -->
-<div class="card practice">
-  <h2>✍️ Speaking Practice</h2>
+  <h2>💬 Daily Speaking Lines</h2>
   <ul>
-    <li>I do not feel afraid.</li>
-    <li>I did not practice yesterday.</li>
-    <li>I will not stop learning English.</li>
+    <li>I wake up early in the morning.</li>
+    <li>I get ready for my work.</li>
+    <li>I try to speak English daily.</li>
+    <li>I believe in myself.</li>
   </ul>
-  <p>🎯 Speak for <b>4 minutes</b> using only negative sentences.</p>
 </div>
 
-<!-- BUTTONS -->
-<div class="action-buttons">
+<div class="practice">
+  <h2>🔥 10-Minute Speaking Challenge</h2>
+  <ul>
+    <li>Speak about your daily routine</li>
+    <li>Speak in front of mirror</li>
+    <li>Do not stop even if you make mistakes</li>
+  </ul>
+</div>
+
+<div class="buttons">
   <a href="https://whatsapp.com/channel/0029VbCE4X1HQbSDQDRtCs1B"
-     class="btn primary" target="_blank">
+     class="btn whatsapp" target="_blank">
      📢 Join WhatsApp Channel
   </a>
 
-  <a href="../index.html#about" class="btn about-btn">
+  <a href="../index.html#about" class="btn about">
      👤 About Founder
   </a>
 
@@ -237,7 +156,7 @@ footer{
 </div>
 
 <footer>
-  © 2025 MJCRPG • Speak Correctly Every Day
+  © 2025 MJCRPG • Speak Daily, Speak Confidently
 </footer>
 
 </body>
