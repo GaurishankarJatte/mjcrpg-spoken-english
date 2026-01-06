@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 16 – Polite English | MJCRPG</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Segoe UI',Arial,sans-serif;
+  background:linear-gradient(135deg,#020617,#0f172a);
+  color:#e5e7eb;
+  line-height:1.7;
+}
+
+/* HEADER */
+.header{
+  background:linear-gradient(135deg,#22c55e,#16a34a);
+  padding:55px 20px;
+  text-align:center;
+}
+.header h1{margin:0;font-size:42px}
+.header p{opacity:.95}
+
+/* LAYOUT */
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+/* CARDS */
+.card{
+  background:#020617;
+  border-radius:20px;
+  padding:25px;
+  margin-bottom:30px;
+  box-shadow:0 18px 40px rgba(0,0,0,.5);
+}
+
+h2{
+  color:#22c55e;
+  margin-top:0;
+}
+
+/* POLITE BOX */
+.polite-box{
+  background:#052e16;
+  border-left:6px solid #22c55e;
+  padding:18px;
+  border-radius:14px;
+  margin-top:15px;
+}
+
+.compare{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+  margin-top:15px;
+}
+.bad{
+  background:#450a0a;
+  padding:15px;
+  border-radius:14px;
+}
+.good{
+  background:#022c22;
+  padding:15px;
+  border-radius:14px;
+}
+
+/* BUTTONS */
+.buttons{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+  margin:40px 0;
+}
+.btn{
+  padding:14px 26px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:600;
+  transition:.3s;
+}
+.btn.whatsapp{
+  background:#22c55e;
+  color:#022c22;
+}
+.btn.about{
+  background:#facc15;
+  color:#422006;
+}
+.btn.next{
+  background:#38bdf8;
+  color:#020617;
+}
+.btn:hover{transform:translateY(-4px) scale(1.05)}
+
+  /* ANIMATED HEADER */
+.animated-header{
+  height:320px;
+  background:linear-gradient(270deg,#22c55e,#16a34a,#0ea5e9);
+  background-size:600% 600%;
+  animation:gradientMove 12s ease infinite;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+@keyframes gradientMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+.header-content{
+  z-index:2;
+  animation:fadeUp 1.2s ease forwards;
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.title{
+  font-size:48px;
+  margin:0;
+  color:white;
+  letter-spacing:2px;
+}
+
+.subtitle{
+  font-size:20px;
+  opacity:.95;
+  margin-top:8px;
+  color:#ecfeff;
+}
+
+/* FLOATING WORDS */
+.floating-words span{
+  position:absolute;
+  bottom:-40px;
+  font-size:14px;
+  padding:6px 14px;
+  background:rgba(255,255,255,.15);
+  border-radius:999px;
+  color:white;
+  animation:floatUp 10s linear infinite;
+}
+
+.floating-words span:nth-child(1){left:10%;animation-delay:0s}
+.floating-words span:nth-child(2){left:30%;animation-delay:2s}
+.floating-words span:nth-child(3){left:50%;animation-delay:4s}
+.floating-words span:nth-child(4){left:70%;animation-delay:6s}
+.floating-words span:nth-child(5){left:85%;animation-delay:8s}
+
+@keyframes floatUp{
+  from{transform:translateY(0);opacity:0}
+  10%{opacity:1}
+  to{transform:translateY(-360px);opacity:0}
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:25px;
+  color:#94a3b8;
+}
+</style>
+</head>
+
+<body>
+
+<header class="animated-header">
+  <div class="header-content">
+    <h1 class="title">MJCRPG</h1>
+    <p class="subtitle">Day 16 – Polite English</p>
+
+    <div class="floating-words">
+      <span>Please</span>
+      <span>Thank You</span>
+      <span>Sorry</span>
+      <span>Excuse Me</span>
+      <span>May I</span>
+    </div>
+  </div>
+</header>
+
+
+<div class="container">
+
+<div class="card">
+  <h2>🎯 Goal of Today</h2>
+  <p>Learn how to speak English politely in daily life and professional situations.</p>
+</div>
+
+<div class="card">
+  <h2>🙏 Polite Words</h2>
+  <div class="polite-box">
+    Please • Thank you • Sorry • Excuse me • May I • Could you
+  </div>
+</div>
+
+<div class="card">
+  <h2>❌ Direct vs ✅ Polite</h2>
+
+  <div class="compare">
+    <div class="bad">
+      Give me water.<br>
+      Open the door.<br>
+      Send the file.
+    </div>
+
+    <div class="good">
+      Could you please give me some water?<br>
+      Please open the door.<br>
+      Could you send the file, please?
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h2>🏢 Polite Office English</h2>
+  <ul>
+    <li>May I come in?</li>
+    <li>Could you help me with this?</li>
+    <li>Sorry for the delay.</li>
+    <li>Thank you for your support.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>🎭 Role-Play Practice</h2>
+  <div class="polite-box">
+    Situation: Asking for leave from your manager.
+  </div>
+  <p>
+    ➜ “Good morning sir, may I take leave tomorrow due to personal work?”
+  </p>
+</div>
+
+<div class="buttons">
+  <a href="https://whatsapp.com/channel/0029VbCE4X1HQbSDQDRtCs1B"
+     class="btn whatsapp" target="_blank">
+     📢 Join WhatsApp Channel
+  </a>
+
+  <a href="../index.html#about" class="btn about">
+     👤 About Founder
+  </a>
+
+  <a href="day17.html" class="btn next">
+     👉 Day 17
+  </a>
+</div>
+
+</div>
+
+<footer>
+  © 2025 MJCRPG • Polite Words Build Respect
+</footer>
+
+</body>
+</html>
