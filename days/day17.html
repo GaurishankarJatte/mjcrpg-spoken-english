@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 17 – Phone Conversations | MJCRPG</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Segoe UI',Arial,sans-serif;
+  background:#020617;
+  color:#e5e7eb;
+  line-height:1.7;
+}
+
+/* ===== ANIMATED HEADER ===== */
+.animated-header{
+  height:320px;
+  background:linear-gradient(270deg,#22c55e,#16a34a,#0ea5e9);
+  background-size:600% 600%;
+  animation:gradientMove 12s ease infinite;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+@keyframes gradientMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+.header-content{
+  z-index:2;
+  animation:fadeUp 1.2s ease forwards;
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.header-content h1{
+  font-size:48px;
+  margin:0;
+  color:white;
+}
+.header-content p{
+  font-size:20px;
+  opacity:.95;
+}
+
+/* FLOATING PHONE ICONS */
+.floating span{
+  position:absolute;
+  bottom:-40px;
+  font-size:22px;
+  animation:floatUp 10s linear infinite;
+}
+.floating span:nth-child(1){left:15%;animation-delay:0s}
+.floating span:nth-child(2){left:40%;animation-delay:3s}
+.floating span:nth-child(3){left:65%;animation-delay:6s}
+.floating span:nth-child(4){left:85%;animation-delay:8s}
+
+@keyframes floatUp{
+  from{transform:translateY(0);opacity:0}
+  10%{opacity:1}
+  to{transform:translateY(-360px);opacity:0}
+}
+
+/* ===== CONTENT ===== */
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:50px 20px;
+}
+
+/* CALL CARD */
+.call-card{
+  background:#020617;
+  border-radius:22px;
+  padding:25px;
+  margin-bottom:30px;
+  box-shadow:0 20px 45px rgba(0,0,0,.5);
+}
+
+/* CALL HEADER */
+.call-title{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:#22c55e;
+  font-size:22px;
+  margin-bottom:15px;
+}
+
+/* CHAT STYLE */
+.chat{
+  margin-top:15px;
+}
+.msg{
+  max-width:75%;
+  padding:14px 18px;
+  margin:10px 0;
+  border-radius:18px;
+  font-size:15px;
+}
+.caller{
+  background:#1e293b;
+  border-top-left-radius:0;
+}
+.receiver{
+  background:linear-gradient(135deg,#38bdf8,#2563eb);
+  color:white;
+  margin-left:auto;
+  border-top-right-radius:0;
+}
+
+/* PRACTICE BOX */
+.practice{
+  background:#052e16;
+  border-left:6px solid #22c55e;
+  padding:20px;
+  border-radius:18px;
+}
+
+/* BUTTONS */
+.buttons{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+  margin:40px 0;
+}
+.btn{
+  padding:14px 26px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:600;
+  transition:.3s;
+}
+.btn.whatsapp{background:#22c55e;color:#022c22}
+.btn.about{background:#facc15;color:#422006}
+.btn.next{background:#38bdf8;color:#020617}
+.btn:hover{transform:translateY(-4px) scale(1.05)}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:25px;
+  color:#94a3b8;
+}
+</style>
+</head>
+
+<body>
+
+<header class="animated-header">
+  <div class="header-content">
+    <h1>MJCRPG</h1>
+    <p>Day 17 – Phone Conversations</p>
+  </div>
+  <div class="floating">
+    <span>📞</span>
+    <span>📱</span>
+    <span>☎️</span>
+    <span>📲</span>
+  </div>
+</header>
+
+<div class="container">
+
+<div class="call-card">
+  <div class="call-title">📞 Conversation 1: Formal Office Call</div>
+  <div class="chat">
+    <div class="msg caller">Hello, may I speak to Mr. Sharma?</div>
+    <div class="msg receiver">Yes, speaking. How may I help you?</div>
+    <div class="msg caller">This is Gaurishankar from MJCRPG.</div>
+    <div class="msg receiver">Nice to hear from you.</div>
+  </div>
+</div>
+
+<div class="call-card">
+  <div class="call-title">📱 Conversation 2: Informal Call</div>
+  <div class="chat">
+    <div class="msg caller">Hi, what are you doing?</div>
+    <div class="msg receiver">I’m working right now.</div>
+    <div class="msg caller">Can I call you later?</div>
+    <div class="msg receiver">Sure, no problem.</div>
+  </div>
+</div>
+
+<div class="call-card">
+  <div class="call-title">📞 Useful Phone Phrases</div>
+  <ul>
+    <li>May I know who is calling?</li>
+    <li>Could you please repeat that?</li>
+    <li>I will call you back.</li>
+    <li>The line is busy.</li>
+  </ul>
+</div>
+
+<div class="practice">
+  <h3>🎤 Speaking Practice</h3>
+  <ul>
+    <li>Introduce yourself on a call</li>
+    <li>Ask for someone politely</li>
+    <li>End a call professionally</li>
+  </ul>
+  <p>⏱ Practice for <b>10 minutes</b></p>
+</div>
+
+<div class="buttons">
+  <a href="https://whatsapp.com/channel/0029VbCE4X1HQbSDQDRtCs1B"
+     class="btn whatsapp" target="_blank">📢 Join WhatsApp Channel</a>
+
+  <a href="../index.html#about" class="btn about">👤 About Founder</a>
+
+  <a href="day18.html" class="btn next">👉 Day 18</a>
+</div>
+
+</div>
+
+<footer>
+  © 2025 MJCRPG • Speak Confidently on Calls
+</footer>
+
+</body>
+</html>
