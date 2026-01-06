@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 18 – Interview English | MJCRPG</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Segoe UI',Arial,sans-serif;
+  background:#020617;
+  color:#e5e7eb;
+  line-height:1.7;
+}
+
+/* ===== ANIMATED CORPORATE HEADER ===== */
+.animated-header{
+  height:340px;
+  background:linear-gradient(270deg,#0f172a,#1e293b,#2563eb);
+  background-size:600% 600%;
+  animation:gradientMove 14s ease infinite;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+@keyframes gradientMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+.header-content{
+  z-index:2;
+  animation:fadeUp 1.3s ease forwards;
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(35px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.header-content h1{
+  font-size:48px;
+  margin:0;
+  color:white;
+  letter-spacing:1px;
+}
+.header-content p{
+  font-size:20px;
+  opacity:.95;
+}
+
+/* FLOATING ICONS */
+.float span{
+  position:absolute;
+  bottom:-40px;
+  font-size:20px;
+  animation:floatUp 12s linear infinite;
+}
+.float span:nth-child(1){left:15%;animation-delay:0s}
+.float span:nth-child(2){left:40%;animation-delay:3s}
+.float span:nth-child(3){left:65%;animation-delay:6s}
+.float span:nth-child(4){left:85%;animation-delay:9s}
+
+@keyframes floatUp{
+  from{transform:translateY(0);opacity:0}
+  10%{opacity:1}
+  to{transform:translateY(-380px);opacity:0}
+}
+
+/* ===== CONTENT ===== */
+.container{
+  max-width:950px;
+  margin:auto;
+  padding:50px 20px;
+}
+
+/* CARDS */
+.card{
+  background:#020617;
+  border-radius:22px;
+  padding:28px;
+  margin-bottom:30px;
+  box-shadow:0 20px 45px rgba(0,0,0,.55);
+}
+
+h2{
+  color:#38bdf8;
+  margin-top:0;
+}
+
+/* Q&A */
+.qa{
+  background:#1e293b;
+  padding:18px;
+  border-radius:16px;
+  margin-top:15px;
+}
+.q{color:#facc15;font-weight:600}
+.a{margin-top:8px}
+
+/* DO DONT */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+.do{
+  background:#052e16;
+  border-left:6px solid #22c55e;
+  padding:16px;
+  border-radius:16px;
+}
+.dont{
+  background:#450a0a;
+  border-left:6px solid #ef4444;
+  padding:16px;
+  border-radius:16px;
+}
+
+/* PRACTICE */
+.practice{
+  background:#020617;
+  border-left:6px solid #38bdf8;
+  padding:20px;
+  border-radius:18px;
+}
+
+/* BUTTONS */
+.buttons{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+  margin:40px 0;
+}
+.btn{
+  padding:14px 26px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:600;
+  transition:.3s;
+}
+.btn.whatsapp{background:#22c55e;color:#022c22}
+.btn.about{background:#facc15;color:#422006}
+.btn.next{background:#38bdf8;color:#020617}
+.btn:hover{transform:translateY(-4px) scale(1.05)}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:25px;
+  color:#94a3b8;
+}
+</style>
+</head>
+
+<body>
+
+<header class="animated-header">
+  <div class="header-content">
+    <h1>MJCRPG</h1>
+    <p>Day 18 – Interview English</p>
+  </div>
+  <div class="float">
+    <span>💼</span>
+    <span>🗣️</span>
+    <span>📄</span>
+    <span>🎯</span>
+  </div>
+</header>
+
+<div class="container">
+
+<div class="card">
+  <h2>🎯 Goal of Today</h2>
+  <p>Learn how to answer interview questions confidently and professionally.</p>
+</div>
+
+<div class="card">
+  <h2>❓ Common Interview Questions</h2>
+
+  <div class="qa">
+    <div class="q">Tell me about yourself.</div>
+    <div class="a">
+      I am a motivated learner with strong interest in improving my skills.
+      I am confident, hardworking, and eager to grow.
+    </div>
+  </div>
+
+  <div class="qa">
+    <div class="q">Why should we hire you?</div>
+    <div class="a">
+      I am dedicated, quick learner, and I always give my best to the company.
+    </div>
+  </div>
+
+  <div class="qa">
+    <div class="q">What are your strengths?</div>
+    <div class="a">
+      My strengths are communication skills, adaptability, and teamwork.
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h2>✅ Do & ❌ Don’t</h2>
+  <div class="grid">
+    <div class="do">
+      ✔ Speak clearly<br>
+      ✔ Maintain eye contact<br>
+      ✔ Be confident
+    </div>
+    <div class="dont">
+      ❌ Speak too fast<br>
+      ❌ Use slang<br>
+      ❌ Be nervous
+    </div>
+  </div>
+</div>
+
+<div class="practice">
+  <h3>🎤 Mock Interview Practice</h3>
+  <ul>
+    <li>Introduce yourself in 1 minute</li>
+    <li>Answer “Why should we hire you?”</li>
+    <li>Speak confidently in front of mirror</li>
+  </ul>
+</div>
+
+<div class="buttons">
+  <a href="https://whatsapp.com/channel/0029VbCE4X1HQbSDQDRtCs1B"
+     class="btn whatsapp" target="_blank">📢 Join WhatsApp Channel</a>
+
+  <a href="../index.html#about" class="btn about">👤 About Founder</a>
+
+  <a href="day19.html" class="btn next">👉 Day 19</a>
+</div>
+
+</div>
+
+<footer>
+  © 2025 MJCRPG • Speak Smart. Get Hired.
+</footer>
+
+</body>
+</html>
