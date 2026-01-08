@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 27 – Office & Workplace English | MJCRPG</title>
+
+<style>
+/* ====== General Body ====== */
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#141E30,#243B55);
+    color:#fff;
+    transition:0.4s;
+}
+header{
+    text-align:center;
+    padding:30px 20px;
+    background:rgba(0,0,0,0.6);
+    position:relative;
+    border-bottom:2px solid #00ffcc;
+}
+header h1{
+    margin:0;
+    font-size:2rem;
+}
+header p{
+    margin:5px 0 0 0;
+    font-size:1rem;
+    color:#00ffcc;
+}
+
+/* ====== Mode Toggle Button ====== */
+.mode-btn{
+    position:absolute;
+    top:20px;
+    right:20px;
+    padding:10px 16px;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+    font-weight:bold;
+    background:#ffeb3b;
+    color:#000;
+    transition:0.3s;
+}
+.mode-btn:hover{
+    background:#00ffcc;
+    color:#000;
+}
+
+/* ====== Progress Bar ====== */
+.progress{
+    width:80%;
+    margin:15px auto;
+    background:#222;
+    border-radius:20px;
+    overflow:hidden;
+}
+.progress div{
+    width:90%;
+    height:12px;
+    background:#00ffcc;
+}
+
+/* ====== Sections ====== */
+section{
+    max-width:1150px;
+    margin:25px auto;
+    padding:25px;
+    background:rgba(255,255,255,0.12);
+    border-radius:16px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.4);
+    transition:0.4s;
+}
+h2{color:#ffeb3b; font-size:1.6rem; margin-bottom:10px;}
+.box{
+    background:rgba(0,0,0,0.5);
+    padding:15px 20px;
+    border-radius:12px;
+    margin-top:12px;
+    line-height:1.7;
+}
+ul{line-height:1.9; padding-left:20px;}
+
+/* ====== Buttons ====== */
+.btn{
+    display:inline-block;
+    padding:12px 26px;
+    background:#ffeb3b;
+    color:#000;
+    border-radius:30px;
+    font-weight:bold;
+    margin-top:15px;
+    text-decoration:none;
+    cursor:pointer;
+    transition:0.3s;
+}
+.btn:hover{
+    background:#00ffcc;
+}
+.next{
+    float:right;
+}
+
+/* ====== Footer ====== */
+footer{
+    text-align:center;
+    padding:18px;
+    opacity:0.8;
+    border-top:1px solid #00ffcc;
+}
+
+/* ====== Light Mode ====== */
+.light{
+    background:#f4f4f4;
+    color:#000;
+}
+.light section{
+    background:#ffffff;
+    color:#000;
+}
+.light header{
+    background:#ddd;
+}
+
+/* ====== Floating Progress ====== */
+.progress-float{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#00ffcc;
+    color:#000;
+    padding:10px 18px;
+    border-radius:25px;
+    font-weight:bold;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* ====== Checklist Inputs ====== */
+input[type="checkbox"]{
+    transform:scale(1.2);
+    margin-right:10px;
+    cursor:pointer;
+}
+
+/* ====== Speaking Practice & Timer ====== */
+#practiceText,#timer{
+    margin-top:10px;
+    font-weight:bold;
+    font-size:1rem;
+    color:#ffeb3b;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<button class="mode-btn" onclick="toggleMode()">🌙 Toggle Mode</button>
+<h1>Day 27</h1>
+<p>Office & Workplace English</p>
+<div class="progress"><div></div></div>
+<p class="tip">Progress: Day 27 / 30</p>
+</header>
+
+<!-- Word of the Day -->
+<section>
+<h2>🌟 Word of the Day</h2>
+<div class="box">
+<h3>Professionalism</h3>
+<p>Proper behavior and attitude at work</p>
+<p><i>Example:</i> Professionalism builds trust in the workplace.</p>
+</div>
+</section>
+
+<!-- Why Workplace English Matters -->
+<section>
+<h2>🏢 Why Workplace English Matters</h2>
+<ul>
+<li>Professional communication</li>
+<li>Confidence with seniors & clients</li>
+<li>Clear emails and meetings</li>
+<li>Career growth & leadership</li>
+</ul>
+</section>
+
+<!-- Common Office Sentences -->
+<section>
+<h2>💼 Common Office Sentences</h2>
+<div class="box">
+<p>• Good morning, everyone.</p>
+<p>• I will update you by the end of the day.</p>
+<p>• Please let me know if you need any clarification.</p>
+<p>• I’m working on it and will get back to you.</p>
+<p>• Thank you for your time.</p>
+</div>
+</section>
+
+<!-- Professional Email Sentences -->
+<section>
+<h2>📧 Professional Email Sentences</h2>
+<div class="box">
+<p>• I hope this email finds you well.</p>
+<p>• Please find the attached document.</p>
+<p>• Kindly review and share your feedback.</p>
+<p>• Looking forward to your response.</p>
+</div>
+</section>
+
+<!-- 10 New Words -->
+<section>
+<h2>🧠 10 New English Words</h2>
+<ul>
+<li><b>Deadline</b> – fixed time to complete work</li>
+<li><b>Colleague</b> – person you work with</li>
+<li><b>Supervisor</b> – person who manages you</li>
+<li><b>Responsibility</b> – duty or task</li>
+<li><b>Productivity</b> – efficiency of work</li>
+<li><b>Feedback</b> – response or opinion</li>
+<li><b>Schedule</b> – plan of work/time</li>
+<li><b>Commitment</b> – dedication to work</li>
+<li><b>Escalate</b> – report to higher authority</li>
+<li><b>Professionalism</b> – proper workplace behavior</li>
+</ul>
+</section>
+
+<!-- Checklist -->
+<section>
+<h2>📋 Today’s Checklist</h2>
+<div class="box">
+<label><input type="checkbox"> Read all office sentences</label><br>
+<label><input type="checkbox"> Learn 10 new words</label><br>
+<label><input type="checkbox"> Speak for 2 minutes</label><br>
+<label><input type="checkbox"> Write one email</label>
+</div>
+</section>
+
+<!-- Speaking Practice -->
+<section>
+<h2>🔥 Speaking Practice</h2>
+<div class="box">
+<button class="btn" onclick="startPractice()">🎧 Start Practice</button>
+<button class="btn" onclick="startTimer()">⏳ 2-Minute Timer</button>
+<p id="practiceText"></p>
+<p id="timer"></p>
+</div>
+</section>
+
+<!-- Navigation -->
+<section>
+<a class="btn" href="day26.html">⬅ Previous Day</a>
+<a class="btn next" href="day28.html">Next Day ➜</a>
+</section>
+
+<footer>
+© 2026 MJCRPG | 30-Day Spoken English Program
+</footer>
+
+<div class="progress-float">Day 27 / 30</div>
+
+<script>
+/* Toggle Light / Dark Mode */
+function toggleMode(){
+    document.body.classList.toggle("light");
+}
+
+/* Start Speaking Practice */
+function startPractice(){
+    document.getElementById("practiceText").innerText =
+    "Speak confidently for 2 minutes about your office role.";
+}
+
+/* 2-Minute Timer */
+let time = 120;
+function startTimer(){
+    time = 120;
+    let interval = setInterval(()=>{
+        document.getElementById("timer").innerText = "Time: " + time + " sec";
+        time--;
+        if(time < 0){
+            clearInterval(interval);
+            document.getElementById("timer").innerText = "✅ Time’s up!";
+        }
+    },1000);
+}
+</script>
+
+</body>
+</html>
