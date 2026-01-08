@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 22 – Advanced Communication | MJCRPG</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#1f1c2c,#928dab);
+    color:#fff;
+}
+header{
+    text-align:center;
+    padding:30px;
+    background:rgba(0,0,0,0.5);
+}
+.progress{
+    width:80%;
+    margin:15px auto;
+    background:#222;
+    border-radius:20px;
+    overflow:hidden;
+}
+.progress div{
+    width:73%;
+    height:12px;
+    background:#00ffcc;
+}
+section{
+    max-width:1050px;
+    margin:25px auto;
+    padding:25px;
+    background:rgba(255,255,255,0.12);
+    border-radius:15px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.4);
+}
+h2{color:#ffeb3b;}
+.box{
+    background:rgba(0,0,0,0.45);
+    padding:15px;
+    border-radius:10px;
+    margin-top:12px;
+}
+ul{line-height:1.9;}
+.tip{color:#00ffcc;font-weight:bold;}
+.btn{
+    display:inline-block;
+    padding:14px 26px;
+    background:#ffeb3b;
+    color:#000;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+    margin-top:15px;
+    cursor:pointer;
+}
+.next{
+    float:right;
+    background:#00ffcc;
+}
+.record{
+    background:#ff5252;
+    color:#fff;
+}
+audio{
+    width:100%;
+    margin-top:10px;
+}
+footer{
+    text-align:center;
+    padding:18px;
+    opacity:0.8;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Day 22</h1>
+<p>Advanced Communication & Voice Practice</p>
+
+<div class="progress">
+    <div></div>
+</div>
+<p class="tip">Progress: Day 22 / 30</p>
+</header>
+
+<section>
+<h2>🎯 Learning Goals</h2>
+<ul>
+<li>Speak clearly with correct tone</li>
+<li>Improve pronunciation & confidence</li>
+<li>Listen to your own English</li>
+<li>Communicate ideas effectively</li>
+</ul>
+</section>
+
+<section>
+<h2>🗣️ Advanced Speaking Practice</h2>
+<div class="box">
+<p>1. I express my ideas clearly and confidently.</p>
+<p>2. My pronunciation is improving daily.</p>
+<p>3. I speak with a natural tone.</p>
+<p>4. I communicate without fear.</p>
+<p>5. I sound confident and calm.</p>
+</div>
+</section>
+
+<section>
+<h2>🧠 10 New English Words (Day 22)</h2>
+<ul>
+<li><b>Pronunciation</b> – correct way of speaking words</li>
+<li><b>Intonation</b> – rise and fall of voice</li>
+<li><b>Clarity</b> – clearness in speech</li>
+<li><b>Tone</b> – attitude in voice</li>
+<li><b>Articulate</b> – speak clearly</li>
+<li><b>Engaging</b> – interesting and attractive</li>
+<li><b>Persuade</b> – convince someone</li>
+<li><b>Emphasize</b> – give importance</li>
+<li><b>Effective</b> – producing good results</li>
+<li><b>Expressive</b> – showing feelings clearly</li>
+</ul>
+</section>
+
+<section>
+<h2>🎙 Voice Recording Practice (NEW FEATURE)</h2>
+<div class="box">
+<p class="tip">Task:</p>
+<p>Speak for <b>2 minutes</b> on:</p>
+<p><b>“Why communication skills are important in life”</b></p>
+
+<button class="btn record" onclick="startRecording()">🎙 Start Recording</button>
+<button class="btn" onclick="stopRecording()">⏹ Stop Recording</button>
+
+<audio id="audioPlayer" controls></audio>
+
+<p class="tip">✔ Listen to your voice</p>
+<p class="tip">✔ Note pronunciation mistakes</p>
+<p class="tip">✔ Record again with improvement</p>
+</div>
+</section>
+
+<section>
+<h2>📝 Self-Improvement Task</h2>
+<ul>
+<li>Record your voice twice</li>
+<li>Compare first & second recording</li>
+<li>Notice clarity and confidence</li>
+<li>Practice again tomorrow</li>
+</ul>
+
+<a class="btn" href="day21.html">⬅ Previous Day</a>
+<a class="btn next" href="day23.html">Next Day ➜</a>
+</section>
+
+<footer>
+© 2026 MJCRPG | 30-Day Spoken English Program
+</footer>
+
+<script>
+let mediaRecorder;
+let audioChunks = [];
+
+function startRecording() {
+    navigator.mediaDevices.getUserMedia({ audio: true })
+        .then(stream => {
+            mediaRecorder = new MediaRecorder(stream);
+            mediaRecorder.start();
+            audioChunks = [];
+
+            mediaRecorder.addEventListener("dataavailable", event => {
+                audioChunks.push(event.data);
+            });
+        })
+        .catch(() => {
+            alert("Microphone access denied!");
+        });
+}
+
+function stopRecording() {
+    if(mediaRecorder){
+        mediaRecorder.stop();
+        mediaRecorder.addEventListener("stop", () => {
+            const audioBlob = new Blob(audioChunks);
+            const audioUrl = URL.createObjectURL(audioBlob);
+            document.getElementById("audioPlayer").src = audioUrl;
+        });
+    }
+}
+</script>
+
+</body>
+</html>
