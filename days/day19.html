@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 19 – Public Speaking | MJCRPG</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Segoe UI',Arial,sans-serif;
+  background:#020617;
+  color:#e5e7eb;
+  line-height:1.8;
+}
+
+/* ===== ANIMATED HEADER ===== */
+.header{
+  height:340px;
+  background:linear-gradient(270deg,#9333ea,#7c3aed,#2563eb);
+  background-size:600% 600%;
+  animation:gradient 14s ease infinite;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+@keyframes gradient{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+.header h1{
+  font-size:48px;
+  margin:0;
+}
+.header p{
+  font-size:20px;
+  opacity:.95;
+}
+
+/* CONTENT */
+.container{
+  max-width:950px;
+  margin:auto;
+  padding:50px 20px;
+}
+
+/* CARD */
+.card{
+  background:#020617;
+  border-radius:22px;
+  padding:28px;
+  margin-bottom:30px;
+  box-shadow:0 20px 45px rgba(0,0,0,.55);
+}
+h2{color:#c084fc;margin-top:0}
+
+/* INFO BOX */
+.info{
+  background:#1e293b;
+  padding:18px;
+  border-radius:16px;
+  margin-top:12px;
+}
+
+/* DO & DONT */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+.good{
+  background:#052e16;
+  border-left:6px solid #22c55e;
+  padding:16px;
+  border-radius:16px;
+}
+.bad{
+  background:#450a0a;
+  border-left:6px solid #ef4444;
+  padding:16px;
+  border-radius:16px;
+}
+  /* DAY 19 HEADER SECTION */
+.day19-header {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 35px 25px;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 26px;
+    text-align: center;
+    backdrop-filter: blur(12px);
+}
+
+.day19-header h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.day19-header p {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+.day19-topic {
+    font-size: 20px;
+    padding: 16px;
+    margin: 20px 0;
+    background: rgba(255,255,255,0.1);
+    border-radius: 16px;
+}
+
+.day19-timer {
+    font-size: 42px;
+    color: #ffeb3b;
+    margin: 20px 0;
+}
+
+.day19-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.day19-buttons button {
+    padding: 12px 22px;
+    border-radius: 999px;
+    border: none;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: #022c22;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.day19-buttons button:hover {
+    transform: translateY(-3px) scale(1.05);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .day19-header h2 {
+        font-size: 22px;
+    }
+
+    .day19-timer {
+        font-size: 34px;
+    }
+
+    .day19-topic {
+        font-size: 16px;
+    }
+}
+
+
+/* PRACTICE */
+.practice{
+  background:#1e293b;
+  border-left:6px solid #c084fc;
+  padding:22px;
+  border-radius:18px;
+}
+
+/* BUTTONS */
+.buttons{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+  margin:40px 0;
+}
+.btn{
+  padding:14px 26px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:600;
+  transition:.3s;
+}
+.btn.whatsapp{background:#22c55e;color:#022c22}
+.btn.about{background:#facc15;color:#422006}
+.btn.next{background:#38bdf8;color:#020617}
+.btn:hover{transform:translateY(-4px) scale(1.05)}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:25px;
+  color:#94a3b8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <div>
+    <h1>MJCRPG</h1>
+    <p>Day 19 – Public Speaking</p>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="card">
+  <h2>🎯 Goal of Today</h2>
+  <p>Build confidence to speak clearly and confidently in front of people.</p>
+</div>
+
+<div class="card">
+  <h2>🗣️ What is Public Speaking?</h2>
+  <div class="info">
+    Public speaking is the ability to express ideas confidently before an audience.
+    It is useful in meetings, interviews, presentations, and daily life.
+  </div>
+</div>
+
+<div class="card">
+  <h2>😨 Fear of Speaking – How to Control</h2>
+  <ul>
+    <li>Practice daily for 5–10 minutes</li>
+    <li>Speak slowly and clearly</li>
+    <li>Focus on message, not people</li>
+    <li>Accept small mistakes</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>🧍 Body Language & Voice</h2>
+  <div class="info">
+    ✔ Stand straight<br>
+    ✔ Smile naturally<br>
+    ✔ Maintain eye contact<br>
+    ✔ Use hand gestures<br>
+    ✔ Speak with pauses
+  </div>
+</div>
+
+<div class="card">
+  <h2>✅ Do & ❌ Don’t</h2>
+  <div class="grid">
+    <div class="good">
+      ✔ Prepare before speaking<br>
+      ✔ Speak slowly<br>
+      ✔ Be confident
+    </div>
+    <div class="bad">
+      ❌ Speak too fast<br>
+      ❌ Look at the floor<br>
+      ❌ Panic on mistakes
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h2>🧠 Simple Speech Structure</h2>
+  <div class="info">
+    1️⃣ Introduction – Who you are<br>
+    2️⃣ Main Point – What you want to say<br>
+    3️⃣ Conclusion – Final message
+  </div>
+</div>
+
+  
+
+<div class="practice">
+  <h2>🔥 10-Minute Public Speaking Challenge</h2>
+  <ul>
+    <li>Introduce yourself (2 minutes)</li>
+    <li>Speak about your goal (4 minutes)</li>
+    <li>Speak about your future plan (4 minutes)</li>
+  </ul>
+</div>
+
+<!-- DAY 19 PUBLIC SPEAKING (HEADER FEATURE) -->
+<section class="day19-header">
+    <h2>🎤 Day 19 – Public Speaking Challenge</h2>
+    <p>Speak confidently on a random topic for <b>2 minutes</b>. Record yourself and improve daily.</p>
+
+    <div class="day19-topic" id="topicDisplay">
+        Click "New Topic" to begin!
+    </div>
+
+    <div class="day19-timer" id="timer">02:00</div>
+
+    <div class="day19-buttons">
+        <button onclick="startTimer()">Start</button>
+        <button onclick="stopTimer()">Stop</button>
+        <button onclick="resetTimer()">Reset</button>
+        <button onclick="getNewTopic()">New Topic</button>
+    </div>
+</section>
+
+  
+  
+
+ <div class="card">
+  <h2>📘 Daily Vocabulary – Day 19</h2>
+
+  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
+
+    <div class="info">
+      <b>1. Confidence</b><br>
+      Meaning: Feeling sure about yourself<br>
+      Marathi: आत्मविश्वास<br>
+      Example: She spoke with confidence.
+    </div>
+
+    <div class="info">
+      <b>2. Audience</b><br>
+      Meaning: People who listen<br>
+      Marathi: प्रेक्षक<br>
+      Example: The audience clapped loudly.
+    </div>
+
+    <div class="info">
+      <b>3. Gesture</b><br>
+      Meaning: Hand or body movement<br>
+      Marathi: हावभाव<br>
+      Example: He used gestures while speaking.
+    </div>
+
+    <div class="info">
+      <b>4. Express</b><br>
+      Meaning: To say feelings or ideas<br>
+      Marathi: व्यक्त करणे<br>
+      Example: Express your thoughts clearly.
+    </div>
+
+    <div class="info">
+      <b>5. Hesitate</b><br>
+      Meaning: To stop briefly before speaking<br>
+      Marathi: संकोच करणे<br>
+      Example: Don’t hesitate to speak.
+    </div>
+
+    <div class="info">
+      <b>6. Influence</b><br>
+      Meaning: Power to affect others<br>
+      Marathi: प्रभाव<br>
+      Example: A speaker can influence people.
+    </div>
+
+    <div class="info">
+      <b>7. Presentation</b><br>
+      Meaning: Formal talk or speech<br>
+      Marathi: सादरीकरण<br>
+      Example: He gave a good presentation.
+    </div>
+
+    <div class="info">
+      <b>8. Clarity</b><br>
+      Meaning: Easy to understand<br>
+      Marathi: स्पष्टता<br>
+      Example: Speak with clarity.
+    </div>
+
+    <div class="info">
+      <b>9. Nervous</b><br>
+      Meaning: Feeling worried or afraid<br>
+      Marathi: घाबरलेला<br>
+      Example: I felt nervous before speaking.
+    </div>
+
+    <div class="info">
+      <b>10. Inspire</b><br>
+      Meaning: Motivate someone<br>
+      Marathi: प्रेरणा देणे<br>
+      Example: His speech inspired everyone.
+    </div>
+
+  </div>
+</div>
+ 
+
+<div class="buttons">
+  <a href="https://whatsapp.com/channel/0029VbCE4X1HQbSDQDRtCs1B"
+     class="btn whatsapp" target="_blank">📢 Join WhatsApp Channel</a>
+
+  <a href="../index.html#about" class="btn about">👤 About Founder</a>
+
+  <a href="day20.html" class="btn next">👉 Day 20</a>
+</div>
+
+</div>
+  <script>/* DAY 19 TIMER LOGIC */
+let timerInterval;
+let timeLeft = 120;
+
+const topics = [
+    "The most important lesson I've learned in life",
+    "Why public speaking is a superpower",
+    "My favorite hobby and why I love it",
+    "A challenge I overcame",
+    "The future of technology",
+    "Why kindness matters",
+    "My dream job",
+    "A person who inspires me",
+    "Environmental protection",
+    "What makes a great leader"
+];
+
+function updateTimer() {
+    const minutes = Math.floor(timeLeft / 60).toString().padStart(2, '0');
+    const seconds = (timeLeft % 60).toString().padStart(2, '0');
+    document.getElementById("timer").innerText = `${minutes}:${seconds}`;
+
+    if (timeLeft <= 0) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+        alert("🎉 Great job! Day 19 completed!");
+    }
+    timeLeft--;
+}
+
+function startTimer() {
+    if (!timerInterval) {
+        timerInterval = setInterval(updateTimer, 1000);
+    }
+}
+
+function stopTimer() {
+    clearInterval(timerInterval);
+    timerInterval = null;
+}
+
+function resetTimer() {
+    stopTimer();
+    timeLeft = 120;
+    document.getElementById("timer").innerText = "02:00";
+}
+
+function getNewTopic() {
+    const randomIndex = Math.floor(Math.random() * topics.length);
+    document.getElementById("topicDisplay").innerText = topics[randomIndex];
+    resetTimer();
+}
+</script>
+
+<footer>
+  © 2025 MJCRPG • Speak Bold. Speak Smart.
+</footer>
+
+</body>
+</html>
