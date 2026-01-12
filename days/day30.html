@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 30 – Confidence Mastery & Certification | MJCRPG</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:#fff;
+    transition:0.4s;
+}
+header{
+    text-align:center;
+    padding:40px 20px;
+    background:rgba(0,0,0,0.7);
+    position:relative;
+    border-bottom:3px solid gold;
+}
+.mode-btn{
+    position:absolute;
+    top:20px;
+    right:20px;
+    padding:10px 18px;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+    font-weight:bold;
+    background:gold;
+}
+section{
+    max-width:1150px;
+    margin:30px auto;
+    padding:30px;
+    background:rgba(255,255,255,0.12);
+    border-radius:20px;
+    box-shadow:0 20px 45px rgba(0,0,0,0.45);
+}
+h2{color:gold;}
+.box{
+    background:rgba(0,0,0,0.55);
+    padding:20px;
+    border-radius:14px;
+    margin-top:15px;
+    line-height:1.9;
+}
+ul{line-height:2;}
+.btn{
+    display:inline-block;
+    padding:15px 34px;
+    background:gold;
+    color:#000;
+    border-radius:30px;
+    font-weight:bold;
+    margin-top:18px;
+    text-decoration:none;
+    cursor:pointer;
+}
+.btn:hover{background:#00ffcc;}
+footer{
+    text-align:center;
+    padding:22px;
+    opacity:0.85;
+}
+.light{
+    background:#f4f4f4;
+    color:#000;
+}
+.light section{background:#fff;color:#000;}
+.light header{background:#ddd;}
+#timer,#practiceText{
+    margin-top:12px;
+    font-weight:bold;
+    color:#00ffcc;
+}
+.certificate{
+    border:3px dashed gold;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    background:rgba(0,0,0,0.4);
+}
+.progress-float{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:gold;
+    color:#000;
+    padding:12px 24px;
+    border-radius:25px;
+    font-weight:bold;
+}
+input[type="checkbox"]{
+    transform:scale(1.2);
+    margin-right:8px;
+}
+input[type="text"]{
+    padding:12px;
+    width:90%;
+    max-width:420px;
+    border-radius:10px;
+    border:none;
+    font-size:16px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<button class="mode-btn" onclick="toggleMode()">🌙 Toggle Mode</button>
+<h1>🎓 Day 30</h1>
+<p>Confidence Mastery & Course Completion</p>
+<p><b>🎉 Congratulations! You finished 30 Days</b></p>
+</header>
+
+<section>
+<h2>🚀 What You Have Achieved</h2>
+<ul>
+<li>Fluent daily English speaking</li>
+<li>Professional office communication</li>
+<li>Interview confidence</li>
+<li>Advanced vocabulary</li>
+<li>Public speaking confidence</li>
+</ul>
+</section>
+
+<section>
+<h2>🧠 10 Power English Words</h2>
+<ul>
+<li><b>Confidence</b> – belief in yourself</li>
+<li><b>Fluency</b> – smooth speaking</li>
+<li><b>Clarity</b> – clear expression</li>
+<li><b>Consistency</b> – regular practice</li>
+<li><b>Mastery</b> – expert skill</li>
+<li><b>Growth</b> – continuous improvement</li>
+<li><b>Presence</b> – strong personality</li>
+<li><b>Influence</b> – ability to affect others</li>
+<li><b>Communication</b> – sharing ideas</li>
+<li><b>Success</b> – achievement</li>
+</ul>
+</section>
+
+<section>
+<h2>🎤 Final Speaking Challenge (5 Minutes)</h2>
+<div class="box">
+<p><b>Topic:</b> My English Journey & My Future Goals</p>
+<button class="btn" onclick="startPractice()">🎧 Start Speaking</button>
+<button class="btn" onclick="startTimer()">⏳ Start 5-Minute Timer</button>
+<p id="practiceText"></p>
+<p id="timer"></p>
+</div>
+</section>
+
+<section>
+<h2>✍️ Enter Your Name for Certificate</h2>
+<div class="box">
+<input type="text" id="userName" placeholder="Enter your full name">
+<br>
+<button class="btn" onclick="updateName()">Generate Certificate</button>
+</div>
+</section>
+
+<section>
+<h2>🏆 Course Completion Certificate</h2>
+<div class="certificate">
+<h3>🎓 CERTIFICATE OF COMPLETION</h3>
+<p>This certifies that</p>
+
+<h2 id="certName"><b>YOUR NAME</b></h2>
+
+<p>has successfully completed</p>
+<h3>30-Day Spoken English Program</h3>
+<p><b>Powered by MJCRPG</b></p>
+<p>🌟 Confidence • Fluency • Growth 🌟</p>
+</div>
+</section>
+
+<section>
+<a class="btn" href="day29.html">⬅ Previous Day</a>
+<a class="btn" href="../index.html">🏠 Course Home</a>
+</section>
+
+<footer>
+© 2026 MJCRPG | Spoken English Mastery Program
+</footer>
+
+<div class="progress-float">🎉 Course Completed</div>
+
+<script>
+function toggleMode(){
+    document.body.classList.toggle("light");
+}
+
+function startPractice(){
+    document.getElementById("practiceText").innerText =
+    "Speak confidently about your English journey, mistakes, learning, and goals.";
+}
+
+let time = 300;
+function startTimer(){
+    time = 300;
+    let interval = setInterval(()=>{
+        document.getElementById("timer").innerText = "Time: " + time + " sec";
+        time--;
+        if(time < 0){
+            clearInterval(interval);
+            document.getElementById("timer").innerText = "🏆 Challenge Completed!";
+        }
+    },1000);
+}
+
+function updateName(){
+    let name = document.getElementById("userName").value;
+    if(name.trim()===""){
+        alert("Please enter your name");
+        return;
+    }
+    localStorage.setItem("certName", name);
+    document.getElementById("certName").innerHTML = "<b>" + name + "</b>";
+}
+
+window.onload = function(){
+    let savedName = localStorage.getItem("certName");
+    if(savedName){
+        document.getElementById("certName").innerHTML = "<b>" + savedName + "</b>";
+        document.getElementById("userName").value = savedName;
+    }
+}
+</script>
+
+</body>
+</html>
