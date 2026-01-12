@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 28 – Advanced Professional Speaking | MJCRPG</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:#fff;
+    transition:0.4s;
+}
+header{
+    text-align:center;
+    padding:35px 20px;
+    background:rgba(0,0,0,0.65);
+    position:relative;
+    border-bottom:2px solid #00ffcc;
+}
+.mode-btn{
+    position:absolute;
+    top:20px;
+    right:20px;
+    padding:10px 16px;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+    font-weight:bold;
+    background:#ffeb3b;
+}
+.progress{
+    width:80%;
+    margin:15px auto;
+    background:#222;
+    border-radius:20px;
+    overflow:hidden;
+}
+.progress div{
+    width:93%;
+    height:12px;
+    background:#00ffcc;
+}
+section{
+    max-width:1150px;
+    margin:28px auto;
+    padding:28px;
+    background:rgba(255,255,255,0.12);
+    border-radius:18px;
+    box-shadow:0 18px 40px rgba(0,0,0,0.45);
+}
+h2{color:#ffeb3b;}
+.box{
+    background:rgba(0,0,0,0.55);
+    padding:18px;
+    border-radius:14px;
+    margin-top:12px;
+    line-height:1.8;
+}
+ul{line-height:1.9;}
+.btn{
+    display:inline-block;
+    padding:14px 30px;
+    background:#ffeb3b;
+    color:#000;
+    border-radius:30px;
+    font-weight:bold;
+    margin-top:15px;
+    text-decoration:none;
+    cursor:pointer;
+}
+.btn:hover{background:#00ffcc;}
+.next{float:right;}
+footer{
+    text-align:center;
+    padding:20px;
+    opacity:0.8;
+}
+.light{
+    background:#f4f4f4;
+    color:#000;
+}
+.light section{background:#fff;color:#000;}
+.light header{background:#ddd;}
+.progress-float{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#00ffcc;
+    color:#000;
+    padding:12px 22px;
+    border-radius:25px;
+    font-weight:bold;
+}
+input[type="checkbox"]{transform:scale(1.2);margin-right:8px;}
+#practiceText,#timer{margin-top:10px;font-weight:bold;color:#ffeb3b;}
+</style>
+</head>
+
+<body>
+
+<header>
+<button class="mode-btn" onclick="toggleMode()">🌙 Toggle Mode</button>
+<h1>Day 28</h1>
+<p>Advanced Professional Speaking</p>
+<div class="progress"><div></div></div>
+<p><b>Progress:</b> Day 28 / 30</p>
+</header>
+
+<section>
+<h2>🌟 Word of the Day</h2>
+<div class="box">
+<h3>Articulate</h3>
+<p>To express ideas clearly and effectively</p>
+<p><i>Example:</i> A leader must be articulate during meetings.</p>
+</div>
+</section>
+
+<section>
+<h2>🏢 Advanced Corporate Communication</h2>
+<ul>
+<li>Handling meetings confidently</li>
+<li>Expressing disagreement professionally</li>
+<li>Persuading clients & seniors</li>
+<li>Presenting ideas clearly</li>
+</ul>
+</section>
+
+<section>
+<h2>🗣️ Advanced Professional Phrases</h2>
+<div class="box">
+<p>• I’d like to draw your attention to this point.</p>
+<p>• From a strategic perspective, this makes sense.</p>
+<p>• With due respect, I have a different viewpoint.</p>
+<p>• Let’s align on the next steps.</p>
+<p>• This will add long-term value.</p>
+</div>
+</section>
+
+<section>
+<h2>🤝 Negotiation & Persuasion English</h2>
+<div class="box">
+<p>• We believe this proposal is mutually beneficial.</p>
+<p>• I’m confident this solution meets your expectations.</p>
+<p>• Let’s explore a win-win outcome.</p>
+<p>• We are open to suggestions.</p>
+</div>
+</section>
+
+<section>
+<h2>🧠 10 Advanced English Words (Day 28)</h2>
+<ul>
+<li><b>Articulate</b> – express clearly</li>
+<li><b>Strategic</b> – carefully planned</li>
+<li><b>Persuasive</b> – able to convince</li>
+<li><b>Consensus</b> – general agreement</li>
+<li><b>Leverage</b> – use effectively</li>
+<li><b>Stakeholder</b> – person with interest</li>
+<li><b>Alignment</b> – agreement or cooperation</li>
+<li><b>Feasible</b> – possible to do</li>
+<li><b>Insightful</b> – showing deep understanding</li>
+<li><b>Credibility</b> – trustworthiness</li>
+</ul>
+</section>
+
+<section>
+<h2>🎭 Role-Play Scenario (Advanced)</h2>
+<div class="box">
+<p><b>Situation:</b> You must convince your manager to approve your idea.</p>
+<p>✔ Explain benefits</p>
+<p>✔ Use persuasive language</p>
+<p>✔ End confidently</p>
+</div>
+</section>
+
+<section>
+<h2>📋 Advanced Checklist</h2>
+<div class="box">
+<label><input type="checkbox"> Read all advanced phrases</label><br>
+<label><input type="checkbox"> Learn 10 advanced words</label><br>
+<label><input type="checkbox"> Speak for 3 minutes</label><br>
+<label><input type="checkbox"> Role-play negotiation</label>
+</div>
+</section>
+
+<section>
+<h2>🔥 Speaking Challenge (Level Up)</h2>
+<div class="box">
+<button class="btn" onclick="startPractice()">🎧 Start Speaking</button>
+<button class="btn" onclick="startTimer()">⏳ 3-Minute Timer</button>
+<p id="practiceText"></p>
+<p id="timer"></p>
+</div>
+</section>
+
+<section>
+<a class="btn" href="day27.html">⬅ Previous Day</a>
+<a class="btn next" href="day29.html">Next Day ➜</a>
+</section>
+
+<footer>
+© 2026 MJCRPG | 30-Day Spoken English Program
+</footer>
+
+<div class="progress-float">Day 28 / 30</div>
+
+<script>
+function toggleMode(){
+    document.body.classList.toggle("light");
+}
+function startPractice(){
+    document.getElementById("practiceText").innerText =
+    "Speak persuasively for 3 minutes on a business idea.";
+}
+let time = 180;
+function startTimer(){
+    time = 180;
+    let interval = setInterval(()=>{
+        document.getElementById("timer").innerText = "Time: " + time + " sec";
+        time--;
+        if(time < 0){
+            clearInterval(interval);
+            document.getElementById("timer").innerText = "✅ Excellent work!";
+        }
+    },1000);
+}
+</script>
+
+</body>
+</html>
