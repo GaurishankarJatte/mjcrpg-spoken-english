@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +16,7 @@
             background: linear-gradient(135deg, #141E30, #243B55);
             color: #fff;
         }
-        
+
         .box {
             background: rgba(0, 0, 0, 0.6);
             padding: 35px;
@@ -25,7 +24,7 @@
             width: 330px;
             text-align: center;
         }
-        
+
         input {
             width: 100%;
             padding: 12px;
@@ -33,7 +32,7 @@
             border-radius: 10px;
             border: none;
         }
-        
+
         button {
             margin-top: 20px;
             padding: 12px;
@@ -44,7 +43,7 @@
             font-weight: bold;
             cursor: pointer;
         }
-        
+
         .welcome {
             margin-top: 15px;
             color: #00ffcc;
@@ -55,55 +54,51 @@
 
 <body>
 
-    <div class="box">
-        <h2>MJCRPG Login</h2>
-        <p>Start your Spoken English Journey</p>
+<div class="box">
+    <h2>MJCRPG Login</h2>
+    <p>Start your Spoken English Journey</p>
 
-        <input type="text" id="name" placeholder="Your Full Name">
-        <input type="tel" id="phone" placeholder="WhatsApp Number (optional)">
-        <input type="email" id="email" placeholder="Email (optional)">
+    <input type="text" id="name" placeholder="Your Full Name">
+    <input type="tel" id="phone" placeholder="WhatsApp Number (optional)">
+    <input type="email" id="email" placeholder="Email (optional)">
 
-        <button onclick="login()">Login</button>
-        <div class="welcome" id="welcomeText"></div>
-    </div>
+    <button onclick="login()">Login</button>
+    <div class="welcome" id="welcomeText"></div>
+</div>
 
-    <script>
-        function login() {
-            let name = document.getElementById("name").value.trim();
-            let phone = document.getElementById("phone").value.trim();
-            let email = document.getElementById("email").value.trim();
+<script>
+function login() {
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const email = document.getElementById("email").value.trim();
 
-            if (name === "") {
-                alert("Please enter your name");
-                return;
-            }
+    if (!name) {
+        alert("Please enter your name");
+        return;
+    }
 
-            // Save current user
-            localStorage.setItem("mj_user", name);
-            localStorage.setItem("currentDay", 1);
+    // Save login data
+    localStorage.setItem("mj_user", name);
+    localStorage.setItem("currentDay", "1");
 
-            // Save admin log (list of users)
-            let users = JSON.parse(localStorage.getItem("mj_users")) || [];
-            users.push({
-                name: name,
-                phone: phone,
-                email: email,
-                date: new Date().toLocaleString()
-            });
-            localStorage.setItem("mj_users", JSON.stringify(users));
+    let users = JSON.parse(localStorage.getItem("mj_users")) || [];
+    users.push({
+        name,
+        phone,
+        email,
+        date: new Date().toLocaleString()
+    });
+    localStorage.setItem("mj_users", JSON.stringify(users));
 
-            // Welcome message (USER)
-            document.getElementById("welcomeText").innerText =
-                "Welcome " + name + "! 🎉 Login successful.";
+    document.getElementById("welcomeText").innerText =
+        `Welcome ${name}! 🎉 Login successful`;
 
-            // Redirect smoothly
-            setTimeout(() => {
-                window.location.href = "course.html";
-
-            }, 1000);
-        }
-    </script>
+    // Redirect to course.html
+    setTimeout(() => {
+        window.location.replace("course.html");
+    }, 800);
+}
+</script>
 
 </body>
-
 </html>
