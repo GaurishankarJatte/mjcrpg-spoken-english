@@ -906,6 +906,13 @@
             window.open(url, "_blank");
             closePopup();
         }
+        <script>
+if (!localStorage.getItem("mj_user")) {
+    alert("Please login first");
+    window.location.href = "index.html";
+}
+</script>
+
     </script>
 
 </body>
