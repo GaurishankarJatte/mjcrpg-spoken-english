@@ -1,108 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | MJCRPG English</title>
-
+    <title>Dashboard | MJCRPG English</title>
     <style>
         body {
             margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #141E30, #243B55);
+            min-height: 100vh;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #e0f7fa;
+        }
+
+        .container {
+            max-width: 420px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 25px 0 15px;
+        }
+
+        .greeting {
+            font-size: 1.7rem;
+            margin: 0;
+            color: #00ffcc;
+            text-shadow: 0 2px 10px rgba(0,255,204,0.4);
+        }
+
+        .subtitle {
+            margin: 6px 0 20px;
+            color: #b0e0e6;
+            font-size: 1.05rem;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0,255,204,0.18);
+        }
+
+        .progress-ring {
+            position: relative;
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 15px;
+        }
+
+        .progress-ring__circle {
+            fill: none;
+            stroke: #00ffcc;
+            stroke-width: 10;
+            stroke-linecap: round;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+
+        .progress-ring__bg {
+            stroke: rgba(255,255,255,0.12);
+        }
+
+        .progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.1rem;
+            font-weight: bold;
+            color: #00ffcc;
+        }
+
+        .day-title {
+            text-align: center;
+            font-size: 1.4rem;
+            margin: 10px 0 8px;
             color: #fff;
         }
-        
-        .box {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 35px;
-            border-radius: 18px;
-            width: 330px;
+
+        .streak {
             text-align: center;
+            font-size: 1.1rem;
+            color: #ffd700;
+            margin-bottom: 15px;
         }
-        
-        input {
+
+        .start-btn {
+            display: block;
             width: 100%;
-            padding: 12px;
-            margin-top: 12px;
-            border-radius: 10px;
-            border: none;
-        }
-        
-        button {
-            margin-top: 20px;
-            padding: 12px;
-            width: 100%;
-            border: none;
-            border-radius: 25px;
+            padding: 16px;
+            margin: 25px 0 15px;
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #000;
             background: #00ffcc;
-            font-weight: bold;
+            border: none;
+            border-radius: 50px;
             cursor: pointer;
+            box-shadow: 0 6px 20px rgba(0,255,204,0.45);
+            transition: all 0.2s;
         }
-        
-        .welcome {
-            margin-top: 15px;
-            color: #00ffcc;
-            font-weight: bold;
+
+        .start-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,255,204,0.6);
+        }
+
+        .start-btn:disabled {
+            background: #666;
+            color: #aaa;
+            box-shadow: none;
+            cursor: not-allowed;
+        }
+
+        .tips {
+            font-size: 0.95rem;
+            color: #b0e0e6;
+            line-height: 1.5;
+            margin-top: 10px;
+        }
+
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .badge {
+            width: 60px;
+            height: 60px;
+            background: rgba(255,215,0,0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            border: 2px solid #ffd70044;
+        }
+
+        .logout {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.95rem;
+        }
+
+        .logout a {
+            color: #ff6b6b;
+            text-decoration: none;
+        }
+
+        @media (max-width: 500px) {
+            .container { padding: 15px; }
         }
     </style>
 </head>
-
 <body>
 
-    <div class="box">
-        <h2>MJCRPG Login</h2>
-        <p>Start your Spoken English Journey</p>
+<div class="container">
 
-        <input type="text" id="name" placeholder="Your Full Name">
-        <input type="tel" id="phone" placeholder="WhatsApp Number (optional)">
-        <input type="email" id="email" placeholder="Email (optional)">
+    <header>
+        <h1 class="greeting" id="greeting">Hello, Champion!</h1>
+        <p class="subtitle">Your Spoken English Journey Day <span id="currentDay">1</span></p>
+    </header>
 
-        <button onclick="login()">Login</button>
-        <div class="welcome" id="welcomeText"></div>
+    <div class="card">
+        <div class="progress-ring">
+            <svg width="110" height="110">
+                <circle class="progress-ring__circle progress-ring__bg" cx="55" cy="55" r="50"/>
+                <circle class="progress-ring__circle" id="progressCircle" cx="55" cy="55" r="50" stroke-dasharray="314" stroke-dashoffset="314"/>
+            </svg>
+            <div class="progress-text" id="progressPercent">0%</div>
+        </div>
+
+        <h2 class="day-title" id="dayTitle">Day 1 – Basic Greetings</h2>
+        <p class="streak" id="streakText">Streak: 1 day 🔥</p>
+
+        <button class="start-btn" id="startLessonBtn" onclick="startLesson()">Start Today's Lesson →</button>
+
+        <div class="tips" id="dailyTip">
+            Tip: Smile while speaking English — it makes your voice warmer and more confident!
+        </div>
     </div>
 
-    <script>
-        function login() {
-            let name = document.getElementById("name").value.trim();
-            let phone = document.getElementById("phone").value.trim();
-            let email = document.getElementById("email").value.trim();
+    <div class="card">
+        <h3 style="text-align:center; margin:0 0 15px;">Your Achievements</h3>
+        <div class="badges" id="badgesContainer">
+            <!-- Badges appear here dynamically -->
+        </div>
+    </div>
 
-            if (name === "") {
-                alert("Please enter your name");
-                return;
-            }
+    <div class="logout">
+        <a href="#" onclick="logout()">Logout</a>
+    </div>
 
-            // Save current user
-            localStorage.setItem("mj_user", name);
-            localStorage.setItem("currentDay", 1);
+</div>
 
-            // Save admin log (list of users)
-            let users = JSON.parse(localStorage.getItem("mj_users")) || [];
-            users.push({
-                name: name,
-                phone: phone,
-                email: email,
-                date: new Date().toLocaleString()
-            });
-            localStorage.setItem("mj_users", JSON.stringify(users));
+<script>
+    // ────────────────────────────────────────────────
+    // Load user data
+    // ────────────────────────────────────────────────
+    const userName = localStorage.getItem("mj_user") || "Friend";
+    const currentDay = parseInt(localStorage.getItem("currentDay") || "1");
+    document.getElementById("greeting").textContent = `Hello, ${userName.split(" ")[0]}!`;
+    document.getElementById("currentDay").textContent = currentDay;
 
-            // Welcome message (USER)
-            document.getElementById("welcomeText").innerText =
-                "Welcome " + name + "! 🎉 Login successful.";
+    // Simple progress: 0–100% based on day (fake for now – later use real completion %)
+    const progress = Math.min((currentDay / 30) * 100, 100); // assuming 30-day plan
+    const circle = document.getElementById("progressCircle");
+    const circumference = 314; // 2 * π * 50
+    circle.style.strokeDashoffset = circumference * (1 - progress/100);
+    document.getElementById("progressPercent").textContent = Math.round(progress) + "%";
 
-            // Redirect smoothly
-            setTimeout(() => {
-                window.location.href = "dashboard.html";
-            }, 1000);
+    // Day titles (expand this array later)
+    const dayTitles = [
+        "Day 1 – Basic Greetings",
+        "Day 2 – Introduce Yourself",
+        "Day 3 – Daily Routines",
+        "Day 4 – Asking Questions",
+        "Day 5 – Shopping English",
+        // ... add up to 30–90 days
+    ];
+    document.getElementById("dayTitle").textContent = dayTitles[currentDay-1] || `Day ${currentDay} – Keep Going!`;
+
+    // Fake streak (later save real streak with dates)
+    document.getElementById("streakText").textContent = `Streak: ${currentDay} day${currentDay>1?'s':''} 🔥`;
+
+    // Sample badges (unlock based on days/milestones)
+    const badgesContainer = document.getElementById("badgesContainer");
+    if (currentDay >= 1) badgesContainer.innerHTML += '<div class="badge">👋</div>';
+    if (currentDay >= 3) badgesContainer.innerHTML += '<div class="badge">💬</div>';
+    if (currentDay >= 7) badgesContainer.innerHTML += '<div class="badge">🔥</div>';
+
+    // ────────────────────────────────────────────────
+    // Actions
+    // ────────────────────────────────────────────────
+    function startLesson() {
+        const btn = document.getElementById("startLessonBtn");
+        btn.textContent = "Opening Lesson...";
+        btn.disabled = true;
+
+        setTimeout(() => {
+            // In real app → redirect to lesson page like lesson.html?day=${currentDay}
+            alert(`Starting Day ${currentDay} lesson!\n\n(Next step: create lesson.html)`);
+            // window.location.href = `lesson.html?day=${currentDay}`;
+            
+            // For demo: simulate progress
+            localStorage.setItem("currentDay", currentDay + 1);
+            location.reload();
+        }, 1200);
+    }
+
+    function logout() {
+        if (confirm("Are you sure you want to logout?")) {
+            localStorage.removeItem("mj_user");
+            localStorage.removeItem("currentDay");
+            window.location.href = "index.html"; // login page
         }
-    </script>
+    }
+</script>
 
 </body>
-
 </html>
