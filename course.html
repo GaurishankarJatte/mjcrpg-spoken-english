@@ -1,895 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MJCRPG Dashboard • 30 Days to Confident English</title>
+  <meta name="description" content="30-Day Spoken English Course – Speak confidently with daily practice, voice notes, and community support."/>
+  <style>
+    :root {
+      --primary: #10b981;
+      --accent: #3b82f6;
+      --glass: rgba(30,41,59,0.7);
+      --border: rgba(148,163,184,0.2);
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --success: #22c55e;
+      --warning: #f59e0b;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: system-ui, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 1.5rem; }
 
-    <title>MJCRPG – 30-Day Spoken English Course</title>
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+    .logo { font-size: 2rem; font-weight: 800; color: var(--primary); }
+    .user { font-weight: 500; color: var(--muted); font-size: 1.1rem; }
 
-    <!-- SEO -->
-    <meta name="description" content="MJCRPG 30-Day Spoken English Course: Speak, Think & Grow confidently. Beginner-friendly daily lessons with vocabulary & practice.">
-    <meta name="keywords" content="Spoken English, English Course, MJCRPG, Learn English, English Vocabulary">
-    <meta property="og:title" content="MJCRPG – 30-Day Spoken English Course">
-    <meta property="og:description" content="Transform your English speaking confidence in just 30 days!">
-    <meta property="og:type" content="website">
+    .section {
+      background: var(--glass);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: 1.2rem;
+      padding: 2rem;
+      margin: 2.5rem 0;
+    }
+    .section h3 { margin-bottom: 1.2rem; color: var(--accent); font-size: 1.5rem; }
 
-    <style>
-         :root {
-            --glass: rgba(255, 255, 255, 0.08);
-            --border: rgba(255, 255, 255, 0.18);
-        }
-        
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        /* 📱 MOBILE FRIENDLY DESIGN */
-        
-        @media (max-width: 768px) {
-            body {
-                font-size: 15px;
-            }
-            /* HERO */
-            .hero {
-                min-height: auto;
-                padding: 40px 15px;
-            }
-            .hero-box {
-                padding: 30px 20px;
-                border-radius: 20px;
-            }
-            .hero h1 {
-                font-size: 34px;
-            }
-            .hero p {
-                font-size: 16px;
-                line-height: 1.5;
-            }
-            /* HERO BUTTONS */
-            .hero-btns a {
-                display: block;
-                width: 100%;
-                margin: 10px 0;
-                padding: 14px;
-                font-size: 16px;
-            }
-            /* STATS */
-            .stats {
-                padding: 30px 15px;
-                gap: 15px;
-            }
-            .stat {
-                padding: 20px;
-            }
-            .stat h2 {
-                font-size: 32px;
-            }
-            /* TODAY */
-            .today {
-                margin: 20px 15px;
-                padding: 20px;
-                border-radius: 18px;
-            }
-            /* TIMELINE */
-            .timeline {
-                margin: 40px auto;
-                padding: 0 15px;
-            }
-            .step {
-                padding: 18px;
-                font-size: 14px;
-            }
-            /* DAYS */
-            .days {
-                margin: 40px auto;
-                padding: 0 15px;
-            }
-            .day-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 14px;
-            }
-            .day {
-                padding: 14px;
-                border-radius: 14px;
-            }
-            .day p {
-                margin: 6px 0;
-                font-size: 14px;
-            }
-            /* ABOUT */
-            .about {
-                margin: 50px 15px;
-                padding: 25px 18px;
-                border-radius: 20px;
-            }
-            .reveal-btn {
-                width: 100%;
-                padding: 14px;
-                font-size: 16px;
-            }
-            /* FOOTER */
-            footer {
-                font-size: 13px;
-                padding: 20px 10px;
-            }
-            @media (max-width: 420px) {
-                .day-grid {
-                    grid-template-columns: 1fr;
-                }
-            }
-            /* WHATSAPP FLOAT */
-            .whatsapp {
-                bottom: 18px;
-                right: 18px;
-                padding: 14px;
-                font-size: 20px;
-            }
-        }
-        
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background: radial-gradient(circle at top, #1e3a8a, #020617);
-            color: #e5e7eb;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-        /* NAVBAR */
-        
-        nav {
-            position: sticky;
-            top: 0;
-            background: #020617cc;
-            backdrop-filter: blur(10px);
-            padding: 12px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 999;
-        }
-        
-        nav .logo {
-            font-size: 22px;
-            font-weight: 700;
-            background: linear-gradient(to right, #38bdf8, #22c55e);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        nav .menu a {
-            margin-left: 18px;
-            text-decoration: none;
-            color: #e5e7eb;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-        
-        nav .menu a:hover {
-            color: #38bdf8;
-        }
-        /* HERO */
-        
-        .hero {
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px 20px;
-        }
-        
-        .hero-box {
-            background: var(--glass);
-            backdrop-filter: blur(14px);
-            border-radius: 28px;
-            padding: 50px 30px;
-            max-width: 900px;
-            animation: fadeUp 1s ease;
-        }
-        
-        .hero h1 {
-            font-size: 48px;
-            background: linear-gradient(to right, #38bdf8, #22c55e);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .hero p {
-            font-size: 18px;
-            opacity: .9;
-            margin: 10px 0 20px;
-        }
-        
-        .hero-btns a {
-            display: inline-block;
-            margin: 12px;
-            padding: 14px 28px;
-            border-radius: 999px;
-            font-weight: 600;
-            transition: 0.3s;
-            text-decoration: none;
-        }
-        
-        .join {
-            background: #22c55e;
-            color: #022c22;
-        }
-        
-        .explore {
-            background: #2563eb;
-            color: white;
-        }
-        
-        .hero-btns a:hover {
-            transform: translateY(-4px) scale(1.05);
-        }
-        /* STATS */
-        
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 60px 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
-        
-        .stat {
-            background: var(--glass);
-            border: 1px solid var(--border);
-            border-radius: 22px;
-            padding: 30px;
-            text-align: center;
-        }
-        
-        .stat h2 {
-            font-size: 42px;
-            color: #38bdf8;
-            margin-bottom: 10px;
-        }
-        /* PROGRESS DASHBOARD */
-        
-        .progress-dashboard {
-            max-width: 1000px;
-            margin: 60px auto;
-            padding: 30px;
-            background: var(--glass);
-            border: 1px solid var(--border);
-            border-radius: 26px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-        }
-        
-        .progress-bar-container {
-            height: 24px;
-            background: #1e40af;
-            border-radius: 12px;
-            overflow: hidden;
-            margin: 20px 0;
-        }
-        
-        #progressBar {
-            height: 100%;
-            width: 0%;
-            background: linear-gradient(to right, #22c55e, #38bdf8);
-            transition: width 0.8s ease;
-        }
-        /* DAILY MOTIVATION */
-        
-        .daily-motivation {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 30px;
-            border-radius: 26px;
-            background: linear-gradient(135deg, #9333ea, #c026d3);
-            text-align: center;
-        }
-        /* PRONUNCIATION SAMPLES */
-        
-        .pronunciation-samples {
-            max-width: 1000px;
-            margin: 70px auto;
-            padding: 40px 20px;
-            background: var(--glass);
-            border: 1px solid var(--border);
-            border-radius: 26px;
-            text-align: center;
-        }
-        
-        .pronunciation-samples h2 {
-            margin-bottom: 30px;
-        }
-        
-        .phrase-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-        
-        .phrase-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 18px;
-            border: 1px solid var(--border);
-        }
-        
-        .phrase-card p {
-            font-size: 20px;
-            margin-bottom: 15px;
-        }
-        
-        audio {
-            width: 100%;
-            margin-top: 10px;
-        }
-        /* TIMELINE */
-        
-        .timeline {
-            max-width: 1100px;
-            margin: 70px auto;
-            padding: 0 20px;
-        }
-        
-        .timeline h2 {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .timeline-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-        }
-        
-        .step {
-            background: var(--glass);
-            border: 1px solid var(--border);
-            border-radius: 22px;
-            padding: 25px;
-            text-align: center;
-        }
-        /* DAYS GRID */
-        
-        .days {
-            max-width: 1100px;
-            margin: 70px auto;
-            padding: 0 20px;
-        }
-        
-        .days h2 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        .day-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 18px;
-        }
-        
-        .day {
-            background: var(--glass);
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            padding: 18px;
-            text-align: center;
-            transition: .3s;
-            cursor: pointer;
-        }
-        
-        .day:hover {
-            transform: translateY(-6px);
-            background: rgba(56, 189, 248, 0.15);
-        }
-        
-        .day a {
-            text-decoration: none;
-            color: #38bdf8;
-            font-weight: 600;
-        }
-        
-        .completed {
-            background: linear-gradient(135deg, #22c55e, #16a34a);
-            color: #022c22 !important;
-        }
-        
-        .completed a {
-            color: #022c22 !important;
-        }
-        /* FOUNDER */
-        
-        .about-section {
-            max-width: 1000px;
-            margin: 80px auto;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        
-        .reveal-btn {
-            margin-top: 20px;
-            padding: 12px 26px;
-            border-radius: 999px;
-            border: none;
-            background: linear-gradient(135deg, #38bdf8, #2563eb);
-            color: white;
-            font-weight: 600;
-            cursor: pointer;
-            transition: .3s;
-        }
-        
-        .reveal-btn:hover {
-            transform: translateY(-3px) scale(1.05);
-        }
-        
-        .founder-info {
-            display: none;
-            margin-top: 18px;
-            color: #cbd5e5;
-            animation: fadeIn .4s ease;
-        }
-        /* FAQ */
-        
-        .faq {
-            max-width: 1000px;
-            margin: 80px auto;
-            padding: 40px 20px;
-        }
-        
-        .faq h2 {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        details {
-            margin: 20px 0;
-            background: var(--glass);
-            border: 1px solid var(--border);
-            padding: 18px;
-            border-radius: 16px;
-            cursor: pointer;
-        }
-        
-        summary {
-            font-weight: 600;
-            font-size: 18px;
-        }
-        
-        details p {
-            margin-top: 12px;
-            opacity: 0.9;
-        }
-        /* TESTIMONIALS */
-        
-        .testimonials {
-            max-width: 1000px;
-            margin: 80px auto;
-            padding: 40px 20px;
-            background: var(--glass);
-            border-radius: 26px;
-            border: 1px solid var(--border);
-        }
-        
-        .testimonials h2 {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .testimonial {
-            text-align: center;
-            margin-bottom: 30px;
-            font-style: italic;
-            color: #cbd5e5;
-        }
-        
-        .testimonial img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin-bottom: 12px;
-            border: 3px solid #38bdf8;
-        }
-        /* COMMUNITY CALL */
-        
-        .community-cta {
-            text-align: center;
-            padding: 80px 20px;
-            background: linear-gradient(135deg, #22c55e, #16a34a);
-        }
-        
-        .community-cta a {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 18px 36px;
-            font-size: 20px;
-            background: white;
-            color: #022c22;
-            border-radius: 999px;
-            text-decoration: none;
-            font-weight: 700;
-        }
-        /* POPUP */
-        
-        .popup-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.75);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-        
-        .popup-box {
-            background: #020617;
-            padding: 30px;
-            border-radius: 22px;
-            text-align: center;
-            max-width: 380px;
-            width: 90%;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, .6);
-            border: 1px solid var(--border);
-        }
-        
-        .popup-box input {
-            width: 100%;
-            padding: 12px;
-            margin: 15px 0;
-            border-radius: 10px;
-            border: none;
-            outline: none;
-            font-size: 15px;
-        }
-        
-        .popup-box button {
-            padding: 12px 24px;
-            border-radius: 999px;
-            border: none;
-            background: #22c55e;
-            color: #022c22;
-            font-weight: 600;
-            cursor: pointer;
-        }
-        
-        .popup-box span {
-            display: block;
-            margin-top: 12px;
-            font-size: 13px;
-            color: #94a3b8;
-            cursor: pointer;
-        }
-        /* FLOATING WHATSAPP */
-        
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #22c55e;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-            z-index: 999;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-        
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
-        /* FOOTER */
-        
-        footer {
-            text-align: center;
-            padding: 40px;
-            background: #020617;
-            margin-top: 80px;
-            color: #94a3b8;
-        }
-        /* ANIMATIONS */
-        
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1.8rem;
+      margin: 2rem 0;
+    }
+    .card {
+      background: var(--glass);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1.8rem;
+    }
+
+    .progress-bar {
+      height: 1.4rem;
+      background: #1e293b;
+      border-radius: 999px;
+      overflow: hidden;
+      margin: 1.2rem 0;
+    }
+    #progressBar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transition: width 0.9s ease;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 110px;
+      padding: 1rem;
+      border-radius: 0.8rem;
+      border: 1px solid #475569;
+      background: #1e293b;
+      color: white;
+      font-size: 1.05rem;
+      resize: vertical;
+      margin: 1rem 0;
+    }
+
+    .btn {
+      padding: 0.9rem 1.8rem;
+      border: none;
+      border-radius: 999px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-primary { background: var(--primary); color: #0f172a; }
+    .btn-success { background: var(--success); color: white; }
+    .btn-outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(16,185,129,0.3); }
+
+    #feedback {
+      margin-top: 1.2rem;
+      padding: 1rem;
+      border-radius: 0.8rem;
+      font-weight: 500;
+    }
+    .feedback-good { background: rgba(34,197,94,0.2); color: #bbf7d0; border: 1px solid var(--success); }
+    .feedback-medium { background: rgba(245,158,11,0.2); color: #fde68a; border: 1px solid var(--warning); }
+
+    .center { text-align: center; margin: 3rem 0; }
+  </style>
 </head>
-
 <body>
 
-    <!-- NAVBAR -->
-    <nav>
-        <div class="logo">MJCRPG</div>
-        <div class="menu">
-            <a href="#progress">Progress</a>
-            <a href="#pronunciation">Pronunciation</a>
-            <a href="#days">Course</a>
-            <a href="#faq">FAQ</a>
-            <a href="#testimonials">Testimonials</a>
-            <a href="https://whatsapp.com/channel/0029VbCE4X1HQbSDQDRtCs1B" target="_blank">Join WhatsApp</a>
-        </div>
-    </nav>
+<div class="container">
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-box">
-            <h1>MJCRPG</h1>
-            <p>30-Day Spoken English Journey 🚀<br>Speak • Think • Grow</p>
-            <div class="hero-btns">
-                <a class="join" href="https://whatsapp.com/channel/0029VbCE4X1HQbSDQDRtCs1B" target="_blank">Join WhatsApp Channel</a>
-                <a class="explore" href="#days">Explore Course</a>
-            </div>
-        </div>
-    </section>
+  <header>
+    <div class="logo">MJCRPG Dashboard</div>
+    <div class="user">Welcome back, <strong id="userName">Champion</strong></div>
+  </header>
 
-    <!-- STATS -->
-    <section class="stats">
-        <div class="stat">
-            <h2>30</h2>
-            <p>Days Program</p>
-        </div>
-        <div class="stat">
-            <h2>5+</h2>
-            <p>Daily Words</p>
-        </div>
-        <div class="stat">
-            <h2>100%</h2>
-            <p>Beginner Friendly</p>
-        </div>
-        <div class="stat">
-            <h2>5000+</h2>
-            <p>Active Learners</p>
-        </div>
-    </section>
-
-    <!-- PROGRESS DASHBOARD -->
-    <section class="progress-dashboard" id="progress">
-        <h2>📊 Your Progress</h2>
-        <div style="font-size: 28px; margin: 20px 0;" id="progressText">Completed: 0/30 days</div>
-        <div class="progress-bar-container">
-            <div id="progressBar"></div>
-        </div>
-        <p id="streakText" style="margin-top: 20px; font-size: 20px;">Start your streak today! 🔥</p>
-        <p id="congratsMessage" style="display:none; font-size:22px; color:#22c55e; margin-top:20px;">
-            🎉 Congratulations! You've completed the full 30-day course! 🎉
-        </p>
-    </section>
-
-    <!-- DAILY MOTIVATION -->
-    <div class="daily-motivation">
-        <h2>💡 Daily Motivation</h2>
-        <p id="dailyTip" style="font-size: 20px; margin-top: 15px;"></p>
+  <!-- Daily Practice Question -->
+  <section class="section">
+    <h3>Today's Speaking Practice</h3>
+    <p style="color:var(--muted); margin-bottom:0.8rem;">Question / Task for today:</p>
+    <div id="dailyTask" style="font-size:1.25rem; font-weight:500; min-height:60px; margin-bottom:1.5rem;">
+      Loading today's task...
     </div>
 
+    <p style="color:var(--muted); margin:1.5rem 0 0.6rem;">Your answer / spoken sentence (type here):</p>
+    <textarea id="userResponse" placeholder="Write your full sentence or short paragraph here..."></textarea>
 
-
-    <!-- TIMELINE -->
-    <section class="timeline">
-        <h2>🛤️ Your Learning Path</h2>
-        <div class="timeline-grid">
-            <div class="step">Days 1–7<br><b>Grammar & Confidence</b></div>
-            <div class="step">Days 8–14<br><b>Vocabulary & Practice</b></div>
-            <div class="step">Days 15–21<br><b>Daily Conversations</b></div>
-            <div class="step">Days 22–30<br><b>Fluency & Speaking</b></div>
-        </div>
-    </section>
-
-    <!-- DAYS GRID -->
-    <section class="days" id="days">
-        <h2>📅 30-Day Course</h2>
-        <div class="day-grid" id="dayGrid">
-            <!-- Days generated by JS -->
-        </div>
-    </section>
-
-    <!-- FOUNDER -->
-    <section class="about-section" id="about">
-        <h2>👤 About the Founder</h2>
-        <p>This platform is built by an independent learner & educator with a strong mission to help students speak English confidently.</p>
-        <button class="reveal-btn" onclick="toggleFounder()">🔓 Reveal Founder</button>
-        <p id="founderInfo" class="founder-info">
-            Hi, I’m <b>Gaurishankar</b>, founder of <b>MJCRPG</b>.<br> I built this platform to make spoken English simple, practical, and fear-free for beginners.
-        </p>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq" id="faq">
-        <h2>❓ Frequently Asked Questions</h2>
-        <details>
-            <summary>How do I receive daily lessons?</summary>
-            <p>After joining the WhatsApp channel, lessons, audio practice, and tasks are sent directly to you every day!</p>
-        </details>
-        <details>
-            <summary>Is the course completely free?</summary>
-            <p>Yes! The entire 30-day course is 100% free. No hidden charges.</p>
-        </details>
-        <details>
-            <summary>Do I need any prior English knowledge?</summary>
-            <p>No! This course is designed for absolute beginners.</p>
-        </details>
-
-        <details>
-            <summary>Can I practice speaking?</summary>
-            <p>Yes! Daily voice practice tasks and community support are provided in the WhatsApp channel.</p>
-        </details>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section class="testimonials" id="testimonials">
-        <h2>💬 What Learners Say</h2>
-        <div class="testimonial">
-            <img src="https://via.placeholder.com/80" alt="Student"> “I was afraid to speak English. After 15 days, I gained confidence.” — Student, Maharashtra
-        </div>
-        <div class="testimonial">
-            <img src="https://via.placeholder.com/80" alt="Priya"> “Simple lessons and daily practice made me fluent faster than I imagined.” — Priya, Pune
-        </div>
-        <div class="testimonial">
-            <img src="https://via.placeholder.com/80" alt="Rahul"> “MJCRPG is beginner-friendly & very practical.” — Rahul, Mumbai
-        </div>
-        <div class="testimonial">
-            <img src="https://via.placeholder.com/80" alt="Ankita"> “Best course for beginners! I can now speak full sentences confidently.” — Ankita, Delhi
-        </div>
-    </section>
-
-    <!-- COMMUNITY CTA -->
-    <section class="community-cta">
-        <h2>Join 5000+ Learners on WhatsApp</h2>
-        <p>Daily lessons • Voice practice • Community support • Live doubt clearing</p>
-        <a href="https://whatsapp.com/channel/0029VbCE4X1HQbSDQDRtCs1B" target="_blank">Join Now – It's Free!</a>
-    </section>
-
-    <!-- POPUP -->
-    <div id="visitorPopup" class="popup-overlay">
-        <div class="popup-box">
-            <h2>👋 Welcome to MJCRPG</h2>
-            <p>Enter your name to personalize your English journey</p>
-            <input type="text" id="visitorName" placeholder="Your name">
-            <button onclick="submitVisitor()">Continue</button>
-            <span onclick="closePopup()">Skip for now</span>
-        </div>
+    <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+      <button class="btn btn-primary" onclick="checkResponse()">Submit & Check</button>
+      <button class="btn btn-outline" onclick="speakUserResponse()">🔊 Listen to my answer</button>
     </div>
 
-    <!-- FLOATING WHATSAPP BUTTON -->
-    <a class="whatsapp-float" href="https://wa.me/919552181517" target="_blank">💬</a>
+    <div id="feedback"></div>
+  </section>
 
-    <!-- FOOTER -->
-    <footer>
-        © 2026 MJCRPG • Built with ❤️ for English Learners
-    </footer>
+  <!-- Progress -->
+  <section class="section">
+    <h3>Your Progress</h3>
+    <div style="font-size:3.2rem; font-weight:800; color:var(--primary); text-align:center; margin:1rem 0;">
+      Day <span id="currentDay">1</span>
+    </div>
+    <div class="progress-bar">
+      <div id="progressBar"></div>
+    </div>
+    <p style="text-align:center;">
+      Completed: <strong id="completed">0</strong> / 30 days • 
+      Streak: <strong id="streak">0</strong> days 🔥
+    </p>
 
-    <script>
-        /* ================= LOGIN PROTECTION ================= */
-        const user = localStorage.getItem("mj_user");
-        if (!user) {
-            window.location.replace("index.html");
-        }
+    <div class="center">
+      <button class="btn btn-success" onclick="completeToday()">Mark Today as Completed</button>
+    </div>
+  </section>
 
-        /* ================= DAILY MOTIVATION ================= */
-        const tips = [
-            "Consistency beats perfection. Speak one new sentence today! 💬",
-            "Mistakes are proof that you're trying. Keep going! 🔥",
-            "Every day you practice, you get closer to fluency.",
-            "You don't need to be perfect — just start speaking!",
-            "The best way to learn English is to use it daily.",
-            "Your future self will thank you for starting today.",
-            "Small progress every day leads to big results!",
-            "Fear less, speak more. You've got this! 🚀"
-        ];
-        document.getElementById("dailyTip").innerText =
-            tips[new Date().getDate() % tips.length];
+</div>
 
-        /* ================= FOUNDER TOGGLE ================= */
-        function toggleFounder() {
-            const info = document.getElementById("founderInfo");
-            const btn = document.querySelector(".reveal-btn");
-            if (info.style.display === "block") {
-                info.style.display = "none";
-                btn.innerText = "🔓 Reveal Founder";
-            } else {
-                info.style.display = "block";
-                btn.innerText = "🙈 Hide Founder";
-            }
-        }
+<script>
+// ─── User & Progress ───────────────────────────────────────────────
+const userName = localStorage.getItem("mj_user") || "Champion";
+document.getElementById("userName").textContent = userName.split(" ")[0] || "Champion";
 
-        /* ================= DAYS & PROGRESS ================= */
-        const dayGrid = document.getElementById("dayGrid");
+let currentDay = parseInt(localStorage.getItem("currentDay") || "1");
+let completed = currentDay - 1;
+let streak = parseInt(localStorage.getItem("mj_streak") || "0");
 
-        for (let i = 1; i <= 30; i++) {
-            const day = document.createElement("div");
-            day.className = "day";
-            day.innerHTML = `<p>Day ${i}</p><a href="days/day${i}.html">Start →</a>`;
+document.getElementById("currentDay").textContent = currentDay;
+document.getElementById("completed").textContent = completed;
+document.getElementById("streak").textContent = streak;
+document.getElementById("progressBar").style.width = (completed / 30 * 100) + "%";
 
-            if (localStorage.getItem(`day${i}-completed`)) {
-                day.classList.add("completed");
-                day.querySelector("a").innerText = "✅ Completed";
-            }
+// ─── Daily Practice Questions (rotates every day) ──────────────────
+const dailyQuestions = [
+  "Introduce yourself in 2–3 sentences. (Name, where you're from, why you're learning English)",
+  "Describe your daily morning routine in 4–5 sentences.",
+  "Tell me about your favorite food and why you like it.",
+  "What did you do last weekend? Use past tense.",
+  "Explain how to make a cup of tea (step by step).",
+  "Talk about your dream job and why you want it.",
+  "Describe the weather today and how it makes you feel.",
+  "Tell a short story about a funny moment in your life.",
+  "What are 3 things you're grateful for today?",
+  "Describe your city/village in 4–5 sentences.",
+  "What would you do if you won 1 crore rupees?",
+  "Explain the difference between 'borrow' and 'lend'. Give examples.",
+  "Talk about a movie or web series you recently watched.",
+  "Describe your best friend (looks + personality).",
+  "What are your plans for the next 30 days?",
+  "How do you usually celebrate your birthday?",
+  "Explain how to order food in a restaurant (in English).",
+  "Talk about a festival you like and why.",
+  "Describe your favorite season and activities you do in it.",
+  "What advice would you give to someone starting to learn English?",
+  "Tell me about a goal you have for this year.",
+  "Describe a place you want to visit and why.",
+  "Explain the importance of learning English in today's world.",
+  "Talk about a challenge you faced and how you overcame it.",
+  "Describe your perfect day from morning to night.",
+  "What are 3 things you want to improve about yourself?",
+  "Explain how to ask for directions in English.",
+  "Talk about a book or story that inspired you.",
+  "Describe your family in 4–5 sentences.",
+  "What does success mean to you?"
+];
 
-            day.onclick = () => {
-                localStorage.setItem(`day${i}-completed`, "true");
-                day.classList.add("completed");
-                day.querySelector("a").innerText = "✅ Completed";
-                updateProgress();
-            };
+function getDailyQuestion() {
+  const dayOfYear = Math.floor((new Date() - new Date(new Date().getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
+  const index = dayOfYear % dailyQuestions.length;
+  return dailyQuestions[index];
+}
 
-            dayGrid.appendChild(day);
-        }
+document.getElementById("dailyTask").textContent = getDailyQuestion();
 
-        function updateProgress() {
-            let completed = 0;
-            for (let i = 1; i <= 30; i++) {
-                if (localStorage.getItem(`day${i}-completed`)) completed++;
-            }
+// ─── Check User Response ───────────────────────────────────────────
+function checkResponse() {
+  const response = document.getElementById("userResponse").value.trim();
+  const feedbackEl = document.getElementById("feedback");
 
-            document.getElementById("progressText").innerText =
-                `Completed: ${completed}/30 days`;
+  if (response.length < 8) {
+    feedbackEl.textContent = "Please write at least 8–10 words so I can give better feedback.";
+    feedbackEl.className = "feedback-medium";
+    return;
+  }
 
-            document.getElementById("progressBar").style.width =
-                (completed / 30) * 100 + "%";
+  // Very simple heuristic feedback (you can make it smarter later)
+  const hasGoodLength = response.split(" ").length >= 8;
+  const hasQuestionMarkOrPeriod = /[.!?]/.test(response);
+  const hasCapital = /^[A-Z]/.test(response);
 
-            document.getElementById("streakText").innerText =
-                completed > 0 ? "Keep the streak going! 🔥" : "Start your streak today! 🔥";
+  let msg = "Good effort! ";
+  if (hasGoodLength) msg += "Nice length. ";
+  if (hasCapital) msg += "Good start with capital letter. ";
+  if (hasQuestionMarkOrPeriod) msg += "Proper punctuation — well done! ";
+  msg += "Keep practicing every day!";
 
-            if (completed === 30) {
-                document.getElementById("congratsMessage").style.display = "block";
-            }
-        }
-        updateProgress();
+  feedbackEl.textContent = msg;
+  feedbackEl.className = hasGoodLength && hasCapital ? "feedback-good" : "feedback-medium";
+}
 
-        /* ================= VISITOR POPUP ================= */
-        const WHATSAPP_NUMBER = "919552181517";
+// ─── Speak User Response ───────────────────────────────────────────
+function speakUserResponse() {
+  const text = document.getElementById("userResponse").value.trim();
+  if (!text) return alert("Please write something first.");
 
-        setTimeout(() => {
-            if (!localStorage.getItem("mjcrpgVisitor")) {
-                document.getElementById("visitorPopup").style.display = "flex";
-            }
-        }, 7000);
+  if ('speechSynthesis' in window) {
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-IN';
+    u.rate = 0.9;
+    speechSynthesis.speak(u);
+  } else {
+    alert("Text-to-speech not supported in this browser.");
+  }
+}
 
-        function closePopup() {
-            document.getElementById("visitorPopup").style.display = "none";
-        }
+// ─── Complete Day ──────────────────────────────────────────────────
+function completeToday() {
+  if (confirm("Have you finished today's practice?")) {
+    currentDay = Math.min(31, currentDay + 1);
+    completed = currentDay - 1;
+    streak = (localStorage.getItem("mj_last") === new Date().toDateString()) ? streak : streak + 1;
 
-        function submitVisitor() {
-            const name = document.getElementById("visitorName").value.trim();
-            if (!name) {
-                alert("Please enter your name 😊");
-                return;
-            }
+    localStorage.setItem("currentDay", currentDay);
+    localStorage.setItem("mj_streak", streak);
+    localStorage.setItem("mj_last", new Date().toDateString());
 
-            localStorage.setItem("mjcrpgVisitor", "true");
-
-            const message =
-                `Hello MJCRPG 👋%0AName: ${encodeURIComponent(name)}%0AInterested in 30-Day Spoken English Course`;
-
-            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank");
-            closePopup();
-        }
-    </script>
+    location.reload();
+  }
+}
+</script>
 </body>
-
 </html>
