@@ -16,6 +16,7 @@
             font-family: 'Segoe UI', sans-serif;
             background: linear-gradient(135deg, #141E30, #243B55);
             color: #fff;
+            transition: 0.3s;
         }
 
         .box {
@@ -24,6 +25,7 @@
             border-radius: 18px;
             width: 330px;
             text-align: center;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
         }
 
         input {
@@ -32,6 +34,7 @@
             margin-top: 12px;
             border-radius: 10px;
             border: none;
+            outline: none;
         }
 
         button {
@@ -43,12 +46,42 @@
             background: #00ffcc;
             font-weight: bold;
             cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        .toggle-btn {
+            background: #444;
+            color: #fff;
         }
 
         .welcome {
             margin-top: 15px;
             color: #00ffcc;
             font-weight: bold;
+        }
+
+        #userCount {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .light {
+            background: #f2f2f2;
+            color: #000;
+        }
+
+        .light .box {
+            background: #fff;
+            color: #000;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
         }
     </style>
 </head>
@@ -63,50 +96,105 @@
     <input type="tel" id="phone" placeholder="WhatsApp Number (optional)">
     <input type="email" id="email" placeholder="Email (optional)">
 
-    <button onclick="login()">Login</button>
+    <button onclick="login()" id="loginBtn">Login</button>
+    <button onclick="toggleMode()" class="toggle-btn">Toggle Dark/Light Mode</button>
+
+    <p id="userCount"></p>
     <div class="welcome" id="welcomeText"></div>
 </div>
 
 <script>
+
     // Auto redirect if already logged in
-    if (localStorage.getItem("mj_user")) {
-        window.location.href = "course.html";
-    }
+    window.onload = function () {
+        if (localStorage.getItem("mj_user")) {
+            window.location.href = "course.html";
+        }
+
+        updateUserCount();
+    };
+
+    // Press Enter to login
+    document.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+            login();
+        }
+    });
 
     function login() {
         let name = document.getElementById("name").value.trim();
         let phone = document.getElementById("phone").value.trim();
         let email = document.getElementById("email").value.trim();
+        let button = document.getElementById("loginBtn");
+        let welcomeText = document.getElementById("welcomeText");
 
         if (name === "") {
             alert("Please enter your name");
             return;
         }
 
-        // Save current user
-        localStorage.setItem("mj_user", name);
-        localStorage.setItem("currentDay", 1);
+        if (email && !validateEmail(email)) {
+            alert("Invalid email format");
+            return;
+        }
 
-        // Save user list (admin log)
+        if (phone && phone.length < 10) {
+            alert("Invalid phone number");
+            return;
+        }
+
         let users = JSON.parse(localStorage.getItem("mj_users")) || [];
-        users.push({
-            name,
-            phone,
-            email,
-            date: new Date().toLocaleString()
-        });
-        localStorage.setItem("mj_users", JSON.stringify(users));
 
-        document.getElementById("welcomeText").innerText =
-            "Welcome " + name + "! 🎉 Login successful.";
+        // Prevent duplicate email
+        if (email && users.some(user => user.email === email)) {
+            alert("User with this email already exists!");
+            return;
+        }
 
-        // ✅ REDIRECT TO COURSE PAGE
+        // Loading effect
+        button.innerText = "Logging in...";
+        button.disabled = true;
+
         setTimeout(() => {
-            window.location.href = "course.html";
-        }, 1000);
+            localStorage.setItem("mj_user", name);
+            localStorage.setItem("currentDay", 1);
+
+            users.push({
+                name,
+                phone,
+                email,
+                date: new Date().toLocaleString()
+            });
+
+            localStorage.setItem("mj_users", JSON.stringify(users));
+
+            welcomeText.innerText = "Welcome " + name + "! 🎉 Login successful.";
+            welcomeText.style.animation = "fadeIn 0.8s ease-in";
+
+            updateUserCount();
+
+            setTimeout(() => {
+                window.location.href = "course.html";
+            }, 1000);
+
+        }, 800);
     }
+
+    function validateEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function toggleMode() {
+        document.body.classList.toggle("light");
+    }
+
+    function updateUserCount() {
+        let users = JSON.parse(localStorage.getItem("mj_users")) || [];
+        document.getElementById("userCount").innerText =
+            "Total Registered Users: " + users.length;
+    }
+
 </script>
 
 </body>
 </html>
-
